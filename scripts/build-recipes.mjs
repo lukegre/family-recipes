@@ -75,7 +75,8 @@ function imageUrl(prefix = '') {
 }
 
 function makeList(items, itemprop) {
-  const attr = itemprop ? ` itemprop="${itemprop}"` : '';
+  const itempropValue = itemprop === 'recipeIngredient' ? 'recipeIngredient ingredients' : itemprop;
+  const attr = itempropValue ? ` itemprop="${itempropValue}"` : '';
   return `<ul>${items.map((item) => `<li${attr}>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
@@ -143,6 +144,7 @@ function jsonLdFor(recipe) {
     recipeYield: recipe.yield,
     prepTime: recipe.prepTime,
     recipeCategory: recipe.type,
+    ingredients: recipe.ingredients,
     recipeIngredient: recipe.ingredients,
     recipeInstructions: recipe.instructions
   };
@@ -212,7 +214,7 @@ function buildServiceWorker(recipes) {
     ...recipes.map((recipe) => `./${recipePagePath(recipe)}`).sort()
   ];
 
-  return `const CACHE_NAME = 'family-meal-cards-v4';
+  return `const CACHE_NAME = 'family-meal-cards-v5';
 const ASSETS = ${JSON.stringify(assets, null, 2)};
 
 self.addEventListener('install', event => {
