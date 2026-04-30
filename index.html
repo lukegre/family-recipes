@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6a7f59">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Meal Cards">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Family Meal Cards</title>
+  <style>
+    :root {
+      --bg: #faf7f0;
+      --card: #fffdf8;
+      --ink: #2f2a24;
+      --muted: #6f665d;
+      --line: #e2d8c8;
+      --batch: #dfeee2;
+      --recovery: #fff0c9;
+      --flexible: #dde9f7;
+      --fallback: #f2dfe6;
+      --accent: #6a7f59;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    header {
+      padding: 2rem 1rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 .3rem;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .toolbar {
+      max-width: 1100px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: .55rem .9rem;
+      font-size: .95rem;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .rhythm {
+      background: #fffaf0;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1rem;
+      margin: 1rem 0 1.2rem;
+      display: grid;
+      gap: .6rem;
+    }
+
+    .rhythm h2 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: .5rem;
+    }
+
+    .day {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: .7rem;
+      min-height: 82px;
+    }
+
+    .day b {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .day span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1rem;
+      box-shadow: 0 8px 22px rgba(80, 60, 35, .06);
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+
+    .card[data-type="Batch"] { border-top: 9px solid #86ad80; }
+    .card[data-type="Recovery"] { border-top: 9px solid #d9b756; }
+    .card[data-type="Flexible"] { border-top: 9px solid #7799c8; }
+    .card[data-type="Fallback"] { border-top: 9px solid #c9899c; }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin: .55rem 0 .8rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: .2rem .55rem;
+      font-size: .82rem;
+      background: #f2eadf;
+      color: var(--muted);
+    }
+
+    .Batch { background: var(--batch); }
+    .Recovery { background: var(--recovery); }
+    .Flexible { background: var(--flexible); }
+    .Fallback { background: var(--fallback); }
+
+    h4 {
+      margin: .7rem 0 .2rem;
+      font-size: .86rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: .2rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    li { margin: .12rem 0; }
+
+    .note {
+      margin-top: auto;
+      padding-top: .7rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .baby {
+      background: #f7efe1;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: .55rem .65rem;
+      margin-top: .7rem;
+      font-size: .9rem;
+    }
+
+    .baby b {
+      display: block;
+      margin-bottom: .15rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: .45rem;
+      flex-wrap: wrap;
+      margin-top: .7rem;
+      padding-top: .7rem;
+      border-top: 1px dashed var(--line);
+    }
+
+    .actions button {
+      font-size: .82rem;
+      padding: .4rem .65rem;
+      background: #fffaf0;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ink);
+      color: white;
+      padding: .6rem .9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+      z-index: 10;
+    }
+
+    .toast.show { opacity: 1; }
+
+    details {
+      margin-top: .6rem;
+      border-top: 1px dashed var(--line);
+      padding-top: .6rem;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      .week { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media print {
+      body { background: white; }
+      .toolbar, footer { display: none; }
+      .card { break-inside: avoid; box-shadow: none; }
+      .rhythm { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Family Meal Cards</h1>
+    <p class="subtitle">Quick, nourishing meals for a low-decision week: three cooks, leftovers for lunch, Wednesday small group, and no microwave.</p>
+  </header>
+
+  <section class="toolbar" aria-label="Filter cards">
+    <button class="filter-btn active" data-filter="All">All</button>
+    <button class="filter-btn" data-filter="Batch">Batch</button>
+    <button class="filter-btn" data-filter="Recovery">Recovery</button>
+    <button class="filter-btn" data-filter="Flexible">Flexible</button>
+    <button class="filter-btn" data-filter="Fallback">Fallback</button>
+  </section>
+
+  <main>
+    <section class="rhythm">
+      <h2>Weekly rhythm</h2>
+      <div class="week">
+        <div class="day"><b>Mon</b><span>Batch cook</span></div>
+        <div class="day"><b>Tue</b><span>Leftovers</span></div>
+        <div class="day"><b>Wed</b><span>Small group</span></div>
+        <div class="day"><b>Thu</b><span>Recovery meal</span></div>
+        <div class="day"><b>Fri</b><span>Leftovers</span></div>
+        <div class="day"><b>Sat</b><span>Flexible / fun</span></div>
+        <div class="day"><b>Sun</b><span>Prep or relaxed</span></div>
+      </div>
+    </section>
+
+
+    <section class="rhythm">
+      <h2>Shopping list / Bring!</h2>
+      <p class="subtitle">Use “Copy ingredients” and paste into Bring, or use “Share ingredients” on your phone. Direct one-click adding to Bring is not available here, so this page uses copy/share instead.</p>
+    </section>
+
+    <section class="cards" id="cards">
+
+      <article class="card" data-type="Batch">
+        <h3>Lemon Lentil & Spinach Dahl</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">25 min</span><span class="pill">Thermomix-friendly</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Red lentils</li><li>Onion, garlic</li><li>Curry spices</li><li>Coconut milk</li><li>Spinach</li><li>Lemon</li></ul>
+        <details><summary>Method</summary><ul><li>Cook onion, garlic and spices.</li><li>Add lentils, coconut milk and water or stock.</li><li>Simmer until soft, then stir in spinach and lemon.</li></ul></details>
+        <p class="note">Reheat: stovetop with a splash of water. Excellent for lunch leftovers.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Keep spices mild. Mash or blend a portion; serve with rice. Avoid adding salt to the baby portion.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Batch">
+        <h3>Chicken, Sweet Potato & Broccoli Traybake</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">40 min</span><span class="pill">Hands-off</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Chicken thighs</li><li>Sweet potato</li><li>Broccoli</li><li>Olive oil</li><li>Tahini + lemon sauce</li></ul>
+        <details><summary>Method</summary><ul><li>Roast chicken and sweet potato first.</li><li>Add broccoli later so it does not burn.</li><li>Finish with tahini-lemon dressing.</li></ul></details>
+        <p class="note">Reheat: covered in oven at 170°C. Good Monday anchor meal.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Offer soft shredded chicken, mashed sweet potato, and very soft broccoli florets. Cut into safe finger-food sizes.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Batch">
+        <h3>Quinoa Loaded Bowl</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">25 min</span><span class="pill">Modular</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Quinoa</li><li>Roasted vegetables</li><li>Chickpeas or feta</li><li>Greens</li><li>Olive oil or yoghurt sauce</li></ul>
+        <details><summary>Method</summary><ul><li>Cook quinoa.</li><li>Roast vegetables.</li><li>Serve with protein and sauce.</li></ul></details>
+        <p class="note">Tip: keep sauce separate; eat warm or room temperature.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Serve deconstructed: soft quinoa, mashed chickpeas, roasted veg strips. Go easy on salty feta.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Chickpea Tomato Feta Skillet</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">20 min</span><span class="pill">Low effort</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Chickpeas</li><li>Canned tomatoes</li><li>Garlic</li><li>Feta</li><li>Herbs</li></ul>
+        <details><summary>Method</summary><ul><li>Simmer tomatoes, garlic and chickpeas.</li><li>Add feta at the end.</li><li>Serve with rice, potatoes or GF bread.</li></ul></details>
+        <p class="note">A strong Thursday meal: warm, fast, and forgiving.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Squash chickpeas flat to reduce choking risk. Keep feta minimal because it is salty.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Green Power Soup</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">20 min</span><span class="pill">Thermomix</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Courgette</li><li>Peas</li><li>Spinach</li><li>White beans</li><li>Olive oil</li></ul>
+        <details><summary>Method</summary><ul><li>Cook vegetables and beans with stock.</li><li>Blend smooth.</li><li>Top with olive oil, seeds or cheese.</li></ul></details>
+        <p class="note">Reheat: Thermomix or stovetop. Add bread, eggs or cheese for extra protein.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Serve thick in a small bowl or on pre-loaded spoons. Add yoghurt to cool it quickly.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Baked Eggs & Greens</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">25 min</span><span class="pill">Protein-rich</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Eggs</li><li>Tomato base</li><li>Spinach</li><li>Herbs</li><li>Optional feta</li></ul>
+        <details><summary>Method</summary><ul><li>Warm tomato base in pan.</li><li>Add greens.</li><li>Crack in eggs and bake or cover until set.</li></ul></details>
+        <p class="note">Best fresh, but sauce base can be made ahead.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Cook eggs fully until firm. Chop spinach finely. Serve with soft toast fingers or potato.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Thai Curry</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">25 min</span><span class="pill">Family favourite</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Curry paste</li><li>Coconut milk</li><li>Vegetables</li><li>Chicken, tofu or chickpeas</li><li>Rice</li></ul>
+        <details><summary>Method</summary><ul><li>Simmer curry paste and coconut milk.</li><li>Add protein and vegetables.</li><li>Serve with rice.</li></ul></details>
+        <p class="note">Make it saucy so leftovers reheat well.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Keep baby portion mild before adding extra curry paste or chilli. Serve rice with soft veg and shredded protein.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Tacos / Wraps</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">15 min</span><span class="pill">Assemble</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>GF wraps or corn tortillas</li><li>Beans, mince or chicken</li><li>Avocado</li><li>Tomato / salsa</li><li>Yoghurt sauce</li></ul>
+        <details><summary>Method</summary><ul><li>Warm the protein.</li><li>Put everything on the table.</li><li>Everyone assembles their own.</li></ul></details>
+        <p class="note">Good Saturday meal. Also useful for using up leftovers.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Serve fillings separately: avocado, beans squashed flat, soft veg, shredded chicken. Avoid hard raw pieces.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Saucy Gnocchi</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">30 min</span><span class="pill">Comfort</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Gnocchi</li><li>Tomato or pesto sauce</li><li>Spinach</li><li>Optional sausage, beans or feta</li></ul>
+        <details><summary>Method</summary><ul><li>Cook gnocchi.</li><li>Heat sauce with greens and protein.</li><li>Combine generously.</li></ul></details>
+        <p class="note">Key rule: keep it saucy; dry gnocchi is poor without a microwave.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Cut gnocchi into small pieces. Keep sauce mild and not too salty.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>10-minute Egg Fried Rice</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">10 min</span><span class="pill">Bad-day meal</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Cooked rice</li><li>Eggs</li><li>Frozen peas / vegetables</li><li>Tamari</li><li>Sesame oil if available</li></ul>
+        <details><summary>Method</summary><ul><li>Scramble eggs.</li><li>Add rice and vegetables.</li><li>Season with tamari.</li></ul></details>
+        <p class="note">Keep frozen veg and eggs stocked at all times.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Use low-salt tamari or leave seasoning out of baby portion. Ensure peas/veg are soft; egg fully cooked.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>Soup + Eggs + Bread</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">10–15 min</span><span class="pill">No thinking</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Frozen soup or jarred soup</li><li>Boiled or fried eggs</li><li>GF bread / potatoes</li><li>Olive oil</li></ul>
+        <details><summary>Method</summary><ul><li>Warm soup on stove.</li><li>Add eggs and bread or potatoes.</li><li>Finish with olive oil.</li></ul></details>
+        <p class="note">A realistic fatigue meal. Not glamorous, but solid.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Use low-salt soup if possible. Serve thick soup with fully cooked egg and soft bread fingers.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>Yoghurt Bowl Dinner</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">5 min</span><span class="pill">Emergency</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Greek yoghurt</li><li>Nuts or seeds</li><li>Berries / banana</li><li>Nut butter</li><li>Honey if needed</li></ul>
+        <details><summary>Method</summary><ul><li>Assemble in bowls.</li><li>Add extra nuts/seeds for staying power.</li></ul></details>
+        <p class="note">Best as an emergency adult meal, not the main family default.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Use plain full-fat yoghurt. Avoid whole nuts; use smooth nut butter or ground seeds.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+
+      <article class="card" data-type="Batch">
+        <h3>Turkey or Lentil Bolognese</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">35 min</span><span class="pill">Freezer-friendly</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Turkey mince or red lentils</li><li>Passata / canned tomatoes</li><li>Carrot, celery, onion</li><li>Italian herbs</li><li>GF pasta or potatoes</li></ul>
+        <details><summary>Method</summary><ul><li>Cook the veg base slowly if you can.</li><li>Add mince or lentils and tomatoes.</li><li>Simmer until rich.</li></ul></details>
+        <p class="note">Reheat: stovetop with splash water. Make double and freeze sauce.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Keep baby portion low salt. Serve sauce with small pasta, potato, or soft veg; mince should be finely broken up.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Batch">
+        <h3>Moroccan Chickpea & Carrot Stew</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">30 min</span><span class="pill">Plant-based</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Chickpeas</li><li>Carrots</li><li>Canned tomatoes</li><li>Cumin, cinnamon, paprika</li><li>Rice or quinoa</li></ul>
+        <details><summary>Method</summary><ul><li>Cook spices briefly in oil.</li><li>Add carrots, tomatoes and chickpeas.</li><li>Simmer until soft and sweet.</li></ul></details>
+        <p class="note">Reheat: stovetop. Add yoghurt or feta for protein and richness.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Keep spices gentle. Squash chickpeas and make carrots very soft.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Batch">
+        <h3>Salmon Potato Traybake</h3>
+        <div class="meta"><span class="pill Batch">Batch</span><span class="pill">35 min</span><span class="pill">Omega-3</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Salmon fillets</li><li>Baby potatoes</li><li>Green beans or broccoli</li><li>Lemon</li><li>Olive oil</li></ul>
+        <details><summary>Method</summary><ul><li>Roast potatoes first.</li><li>Add salmon and greens for the last 12–15 min.</li><li>Finish with lemon and olive oil.</li></ul></details>
+        <p class="note">Best fresh. Leftovers work cold/room temp as a lunch bowl.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Check carefully for bones. Flake salmon; serve with mashed potato and soft green beans.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Red Pesto Beans on Toast</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">12 min</span><span class="pill">Pantry meal</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>White beans</li><li>Red pesto</li><li>Spinach</li><li>GF toast</li><li>Parmesan or feta</li></ul>
+        <details><summary>Method</summary><ul><li>Warm beans with pesto and splash water.</li><li>Wilt in spinach.</li><li>Serve on toast with cheese.</li></ul></details>
+        <p class="note">Very good Thursday option: minimal chopping, high satisfaction.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Use pesto sparingly because it can be salty. Squash beans and serve on soft toast strips.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Omelette Plate</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">15 min</span><span class="pill">Protein-first</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Eggs</li><li>Cheese or feta</li><li>Spinach</li><li>Cherry tomatoes</li><li>Avocado / bread / potatoes</li></ul>
+        <details><summary>Method</summary><ul><li>Make a simple omelette.</li><li>Add greens and cheese.</li><li>Serve with raw veg and a carb.</li></ul></details>
+        <p class="note">Not fancy, but ideal when the household is tired.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Cook egg through. Cut into strips; serve with soft avocado or tomato pieces.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Recovery">
+        <h3>Coconut Noodle Soup</h3>
+        <div class="meta"><span class="pill Recovery">Recovery</span><span class="pill">20 min</span><span class="pill">Comforting</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Rice noodles</li><li>Coconut milk</li><li>Stock</li><li>Frozen veg</li><li>Tofu, chicken or prawns</li></ul>
+        <details><summary>Method</summary><ul><li>Simmer coconut milk and stock.</li><li>Add protein and veg.</li><li>Add rice noodles at the end.</li></ul></details>
+        <p class="note">Make only what you need; noodles are less good as leftovers.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Cut noodles short. Keep broth low salt and temperature safe; offer soft veg/protein pieces.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Baked Potato Bar</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">10 + 45 min</span><span class="pill">Low effort</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Large potatoes</li><li>Beans or tuna</li><li>Cheese</li><li>Yoghurt / sour cream</li><li>Salad bits</li></ul>
+        <details><summary>Method</summary><ul><li>Bake potatoes until soft.</li><li>Put toppings on the table.</li><li>Everyone builds their own.</li></ul></details>
+        <p class="note">Hands-off and child-friendly. Good weekend option.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Serve mashed potato with yoghurt, soft beans, or cheese in small amounts. Avoid tough potato skin.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Frittata with Potatoes & Greens</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">30 min</span><span class="pill">Leftover-friendly</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Eggs</li><li>Cooked potatoes</li><li>Spinach or courgette</li><li>Cheese</li><li>Herbs</li></ul>
+        <details><summary>Method</summary><ul><li>Warm potatoes and veg in pan.</li><li>Add beaten eggs and cheese.</li><li>Finish under grill or in oven.</li></ul></details>
+        <p class="note">Good warm or cold. Useful for lunches without reheating.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Cook egg fully. Cut into soft strips or cubes; chop greens finely.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Flexible">
+        <h3>Halloumi Veg Bowls</h3>
+        <div class="meta"><span class="pill Flexible">Flexible</span><span class="pill">25 min</span><span class="pill">Vegetarian</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Halloumi</li><li>Courgette / peppers</li><li>Rice or quinoa</li><li>Hummus</li><li>Lemon</li></ul>
+        <details><summary>Method</summary><ul><li>Pan-fry halloumi.</li><li>Cook or roast veg.</li><li>Serve with grains and hummus.</li></ul></details>
+        <p class="note">Best fresh, but components work well for lunch bowls.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Halloumi is salty, so offer only a little. Focus on soft veg, hummus and grains.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>Rotisserie Chicken Plate</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">10 min</span><span class="pill">No-cook</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Ready-cooked chicken</li><li>Bagged salad</li><li>Avocado</li><li>Rice cakes / GF bread / potatoes</li><li>Yoghurt sauce</li></ul>
+        <details><summary>Method</summary><ul><li>Put everything on plates.</li><li>Add sauce and olive oil.</li></ul></details>
+        <p class="note">Good to keep in mind for genuinely depleted days.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Check salt level and remove skin. Shred chicken finely; serve with avocado and soft carb.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>Tuna, Beans & Tomato Salad</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">8 min</span><span class="pill">No-cook</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Tinned tuna</li><li>White beans</li><li>Tomatoes</li><li>Olive oil</li><li>Lemon</li></ul>
+        <details><summary>Method</summary><ul><li>Mix everything.</li><li>Serve with bread, potatoes or rice cakes.</li></ul></details>
+        <p class="note">High protein, high convenience. Not toddler-first, but excellent adult fallback.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Use tuna occasionally and choose low-salt if possible. Squash beans and cut tomato small.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+      <article class="card" data-type="Fallback">
+        <h3>Freezer Soup Upgrade</h3>
+        <div class="meta"><span class="pill Fallback">Fallback</span><span class="pill">10 min</span><span class="pill">Emergency</span></div>
+        <h4>Ingredients</h4>
+        <ul><li>Frozen soup</li><li>White beans or lentils</li><li>Olive oil</li><li>Seeds / cheese</li><li>GF bread</li></ul>
+        <details><summary>Method</summary><ul><li>Reheat soup on stove.</li><li>Add beans or lentils.</li><li>Top with oil, seeds or cheese.</li></ul></details>
+        <p class="note">Turns a light soup into a proper dinner.</p>
+
+        <div class="baby"><b>For 10-month-old</b>Keep baby portion low salt. Blend beans/lentils into soup or mash well.</div>
+        <div class="actions">
+          <button class="copy-ingredients" type="button">Copy ingredients</button>
+          <button class="share-ingredients" type="button">Share ingredients</button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    Tip: print from the browser to get physical cards, or keep this as a phone-friendly kitchen page.
+  </footer>
+
+
+  <div class="toast" id="toast">Copied</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.card');
+      const toast = document.getElementById('toast');
+
+      function showToast(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('show');
+        window.setTimeout(function () {
+          toast.classList.remove('show');
+        }, 1400);
+      }
+
+      function getIngredients(card) {
+        const title = card.querySelector('h3') ? card.querySelector('h3').innerText.trim() : 'Meal card';
+        const headings = Array.from(card.querySelectorAll('h4'));
+        const ingredientsHeading = headings.find(function (h) {
+          return h.innerText.trim().toLowerCase() === 'ingredients';
+        });
+
+        let items = [];
+        if (ingredientsHeading) {
+          let node = ingredientsHeading.nextElementSibling;
+          while (node && node.tagName !== 'H4') {
+            if (node.tagName === 'UL') {
+              items = items.concat(Array.from(node.querySelectorAll('li')).map(function (li) {
+                return li.innerText.trim();
+              }));
+              break;
+            }
+            node = node.nextElementSibling;
+          }
+        }
+
+        return title + "\n\n" + items.join("\n");
+      }
+
+      function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        return new Promise(function (resolve, reject) {
+          try {
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            resolve();
+          } catch (err) {
+            document.body.removeChild(textArea);
+            reject(err);
+          }
+        });
+      }
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const filter = button.dataset.filter;
+
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active');
+          });
+          button.classList.add('active');
+
+          cards.forEach(function (card) {
+            const cardType = card.dataset.type;
+            card.style.display = (filter === 'All' || cardType === filter) ? 'flex' : 'none';
+          });
+        });
+      });
+
+      document.querySelectorAll('.copy-ingredients').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const card = button.closest('.card');
+          const text = getIngredients(card);
+          copyText(text)
+            .then(function () { showToast('Ingredients copied'); })
+            .catch(function () { showToast('Copy blocked by browser'); });
+        });
+      });
+
+      document.querySelectorAll('.share-ingredients').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const card = button.closest('.card');
+          const text = getIngredients(card);
+          const title = card.querySelector('h3') ? card.querySelector('h3').innerText.trim() : 'Meal card';
+
+          if (navigator.share) {
+            navigator.share({ title: title, text: text })
+              .catch(function () {
+                // Usually user cancelled; no need for an error.
+              });
+          } else {
+            copyText(text)
+              .then(function () { showToast('Copied — paste into Bring'); })
+              .catch(function () { showToast('Share unavailable'); });
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
