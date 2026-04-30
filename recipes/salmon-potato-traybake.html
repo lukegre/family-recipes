@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT35M",
   "recipeCategory": "Batch",
+  "keywords": "Batch, 35 min, Omega-3",
   "ingredients": [
     "4 salmon fillets",
     "800 g baby potatoes",
@@ -38,7 +39,12 @@
     "Roast potatoes first.",
     "Add salmon and greens for the last 12–15 min.",
     "Finish with lemon and olive oil."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Salmon brings omega-3 fats, iodine and protein; potatoes provide gentle carbs and greens add folate and vitamin C."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/honey-mustard-salmon-potato-and-tenderstem-traybake/"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Salmon Potato Traybake</h1>
       <p itemprop="description">Best fresh. Leftovers work cold/room temp as a lunch bowl.</p>
       <div class="meta"><span class="pill">Batch</span><span class="pill">35 min</span><span class="pill">Omega-3</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/honey-mustard-salmon-potato-and-tenderstem-traybake/" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">4 salmon fillets</li><li itemprop="recipeIngredient ingredients">800 g baby potatoes</li><li itemprop="recipeIngredient ingredients">400 g green beans or broccoli</li><li itemprop="recipeIngredient ingredients">1 lemon</li><li itemprop="recipeIngredient ingredients">2 tbsp olive oil</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Roast potatoes first.</li><li itemprop="recipeInstructions">Add salmon and greens for the last 12–15 min.</li><li itemprop="recipeInstructions">Finish with lemon and olive oil.</li></ol>
-      <p class="note">Best fresh. Leftovers work cold/room temp as a lunch bowl.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Salmon brings omega-3 fats, iodine and protein; potatoes provide gentle carbs and greens add folate and vitamin C.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Check carefully for bones. Flake salmon; serve with mashed potato and soft green beans.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Best fresh. Leftovers work cold/room temp as a lunch bowl.</p>
     </article>
   </main>
 </body>

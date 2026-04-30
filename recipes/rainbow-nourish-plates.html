@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT20M",
   "recipeCategory": "Flexible",
+  "keywords": "Flexible, 20 min, Build-your-own",
   "ingredients": [
     "300 g cooked quinoa or rice",
     "600 g roasted or raw vegetables",
@@ -37,10 +38,15 @@
     "200 g yoghurt herb sauce"
   ],
   "recipeInstructions": [
-    "Put grain, protein, veg and sauce on the table.",
-    "Let everyone assemble their own plate.",
-    "Keep extra components for lunch bowls."
-  ]
+    "Start with a cooked grain, then add one protein, two colourful vegetables, one creamy element and one sauce.",
+    "Keep the components separate on the table so adults can build bowls and the baby can have a safe deconstructed plate.",
+    "Make extra grain, protein and sauce so tomorrow lunch is mostly assembly."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "This is balanced by design: carb, protein, colour, fat and sauce. The variety helps cover more micronutrients across the week."
+  },
+  "isBasedOn": "https://cookieandkate.com/buddha-bowl-recipe/"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -52,7 +58,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -69,12 +76,17 @@
       <h1 itemprop="name">Rainbow Nourish Plates</h1>
       <p itemprop="description">Very much in the gentle, abundant bowl-meal direction: flexible, colourful and leftover-friendly.</p>
       <div class="meta"><span class="pill">Flexible</span><span class="pill">20 min</span><span class="pill">Build-your-own</span></div>
+      <p><a href="https://cookieandkate.com/buddha-bowl-recipe/" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">300 g cooked quinoa or rice</li><li itemprop="recipeIngredient ingredients">600 g roasted or raw vegetables</li><li itemprop="recipeIngredient ingredients">500 g eggs, chicken, tofu or beans</li><li itemprop="recipeIngredient ingredients">2 avocados</li><li itemprop="recipeIngredient ingredients">4 tbsp ground seeds</li><li itemprop="recipeIngredient ingredients">200 g yoghurt herb sauce</li></ul>
       <h2>Method</h2>
-      <ol><li itemprop="recipeInstructions">Put grain, protein, veg and sauce on the table.</li><li itemprop="recipeInstructions">Let everyone assemble their own plate.</li><li itemprop="recipeInstructions">Keep extra components for lunch bowls.</li></ol>
-      <p class="note">Very much in the gentle, abundant bowl-meal direction: flexible, colourful and leftover-friendly.</p>
+      <ol><li itemprop="recipeInstructions">Start with a cooked grain, then add one protein, two colourful vegetables, one creamy element and one sauce.</li><li itemprop="recipeInstructions">Keep the components separate on the table so adults can build bowls and the baby can have a safe deconstructed plate.</li><li itemprop="recipeInstructions">Make extra grain, protein and sauce so tomorrow lunch is mostly assembly.</li></ol>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">This is balanced by design: carb, protein, colour, fat and sauce. The variety helps cover more micronutrients across the week.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Serve deconstructed with soft veg, mashed avocado, squashed beans or shredded protein. Avoid whole seeds.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Very much in the gentle, abundant bowl-meal direction: flexible, colourful and leftover-friendly.</p>
     </article>
   </main>
 </body>

@@ -63,6 +63,110 @@
       align-items: center;
     }
 
+    .search-wrap {
+      flex: 1 1 280px;
+      min-width: min(100%, 280px);
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      background: #fffaf0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .35rem .45rem .35rem .85rem;
+    }
+
+    .search-wrap:focus-within {
+      outline: 3px solid #7799c8;
+      outline-offset: 2px;
+    }
+
+    .search-icon {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .search-input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      min-height: 2.3rem;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1rem;
+      outline: 0;
+    }
+
+    .search-input::placeholder {
+      color: var(--muted);
+      opacity: 1;
+    }
+
+    .search-input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .clear-search {
+      display: none;
+      min-width: 2.2rem;
+      min-height: 2.2rem;
+      padding: 0;
+      border: 0;
+      background: #f2eadf;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .clear-search.show {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .result-count {
+      width: 100%;
+      color: var(--muted);
+      font-size: .9rem;
+      min-height: 1.3rem;
+    }
+
+    .empty-state {
+      display: none;
+      background: #fffaf0;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      color: var(--muted);
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     button {
       border: 1px solid var(--line);
       background: #fffaf0;
@@ -368,6 +472,28 @@
     }
 
     @media (max-width: 760px) {
+      header {
+        padding-top: 1.4rem;
+      }
+
+      .toolbar {
+        margin-top: .8rem;
+      }
+
+      .search-wrap,
+      .filter-group {
+        flex-basis: 100%;
+      }
+
+      .filter-group {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .filter-group button {
+        min-height: 2.75rem;
+      }
+
       .modal {
         padding: 0;
       }
@@ -394,11 +520,20 @@
   </header>
 
   <section class="toolbar" aria-label="Filter cards">
-    <button class="filter-btn active" data-filter="All">All</button>
-    <button class="filter-btn" data-filter="Batch">Batch</button>
-    <button class="filter-btn" data-filter="Recovery">Recovery</button>
-    <button class="filter-btn" data-filter="Flexible">Flexible</button>
-    <button class="filter-btn" data-filter="Fallback">Fallback</button>
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <label class="visually-hidden" for="recipe-search">Search recipes</label>
+      <input class="search-input" id="recipe-search" type="text" inputmode="search" autocomplete="off" placeholder="Search meals or ingredients">
+      <button class="clear-search" id="clear-search" type="button" aria-label="Clear search">×</button>
+    </div>
+    <div class="filter-group" aria-label="Meal type">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Batch">Batch</button>
+      <button class="filter-btn" data-filter="Recovery">Recovery</button>
+      <button class="filter-btn" data-filter="Flexible">Flexible</button>
+      <button class="filter-btn" data-filter="Fallback">Fallback</button>
+    </div>
+    <div class="result-count" id="result-count" aria-live="polite"></div>
   </section>
 
   <main>
@@ -1078,6 +1213,7 @@
       </article>
       <!-- END GENERATED RECIPE CARDS -->
     </section>
+    <div class="empty-state" id="empty-state">No matching meal cards. Try an ingredient, a meal name, or another type.</div>
   </main>
 
   <footer>
@@ -1105,6 +1241,10 @@
     document.addEventListener('DOMContentLoaded', function () {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.card');
+      const searchInput = document.getElementById('recipe-search');
+      const clearSearch = document.getElementById('clear-search');
+      const resultCount = document.getElementById('result-count');
+      const emptyState = document.getElementById('empty-state');
       const toast = document.getElementById('toast');
       const modal = document.getElementById('recipe-modal');
       const modalTitle = document.getElementById('modal-title');
@@ -1113,6 +1253,7 @@
       const modalBody = document.getElementById('modal-body');
       const modalClose = document.getElementById('modal-close');
       let lastFocusedCard = null;
+      let activeFilter = 'All';
 
       const nutritionTips = {
               "Lemon Lentil & Spinach Dahl": "Lentils bring steady plant protein, iron and fibre; lemon helps the body absorb more of the iron from the spinach and lentils.",
@@ -1149,6 +1290,11 @@
               "Baby-Friendly Chicken a la King": "Chicken brings protein and iron, milk adds calcium and energy, and peas, carrots and mushrooms make the creamy sauce more balanced.",
               "Hummus Snack-Board Dinner": "Hummus, eggs or chicken, avocado and fruit make a no-cook plate with protein, fats, fibre and enough freshness to feel alive."
       };
+
+
+
+
+
 
 
 
@@ -1297,6 +1443,11 @@
 
 
 
+
+
+
+
+
       const methodDetails = {
               "Lemon Lentil & Spinach Dahl": [
                       "Finely chop the onion and garlic. Soften them in olive oil or ghee for 5-6 minutes, then add curry powder, cumin, turmeric or garam masala and cook for 30 seconds until fragrant.",
@@ -1347,6 +1498,11 @@
                       "For the baby, spread hummus thinly and cut round or firm foods into safe shapes."
               ]
       };
+
+
+
+
+
 
 
 
@@ -1409,6 +1565,54 @@
       function getNoteText(card) {
         const note = card.querySelector('.note');
         return note ? note.innerText.trim() : '';
+      }
+
+      function normalizeSearchText(text) {
+        return String(text).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function getSearchText(card) {
+        return normalizeSearchText([
+          getRecipeTitle(card),
+          card.dataset.type,
+          Array.from(card.querySelectorAll('.pill')).map(function (pill) { return pill.innerText; }).join(' '),
+          getIngredientItems(card).join(' '),
+          getNoteText(card),
+          getBabyText(card)
+        ].join(' '));
+      }
+
+      function pluralizeMeal(count) {
+        return count === 1 ? 'meal' : 'meals';
+      }
+
+      function updateVisibleCards() {
+        const query = searchInput ? normalizeSearchText(searchInput.value.trim()) : '';
+        let visibleCount = 0;
+
+        cards.forEach(function (card) {
+          const matchesFilter = activeFilter === 'All' || card.dataset.type === activeFilter;
+          const matchesSearch = !query || card.dataset.searchText.indexOf(query) !== -1;
+          const isVisible = matchesFilter && matchesSearch;
+
+          card.style.display = isVisible ? 'flex' : 'none';
+          if (isVisible) visibleCount += 1;
+        });
+
+        if (clearSearch) {
+          clearSearch.classList.toggle('show', Boolean(query));
+        }
+
+        if (resultCount) {
+          const filterLabel = activeFilter === 'All' ? '' : ' in ' + activeFilter.toLowerCase();
+          resultCount.innerText = query || activeFilter !== 'All'
+            ? visibleCount + ' ' + pluralizeMeal(visibleCount) + filterLabel
+            : '';
+        }
+
+        if (emptyState) {
+          emptyState.classList.toggle('show', visibleCount === 0);
+        }
       }
 
       function escapeHtml(text) {
@@ -1565,19 +1769,28 @@
 
       filterButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-          const filter = button.dataset.filter;
+          activeFilter = button.dataset.filter;
 
           filterButtons.forEach(function (b) {
             b.classList.remove('active');
           });
           button.classList.add('active');
 
-          cards.forEach(function (card) {
-            const cardType = card.dataset.type;
-            card.style.display = (filter === 'All' || cardType === filter) ? 'flex' : 'none';
-          });
+          updateVisibleCards();
         });
       });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', updateVisibleCards);
+      }
+
+      if (clearSearch && searchInput) {
+        clearSearch.addEventListener('click', function () {
+          searchInput.value = '';
+          updateVisibleCards();
+          searchInput.focus();
+        });
+      }
 
       document.querySelectorAll('.copy-ingredients').forEach(function (button) {
         button.addEventListener('click', function () {
@@ -1597,6 +1810,7 @@
       });
 
       cards.forEach(function (card) {
+        card.dataset.searchText = getSearchText(card);
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
         card.setAttribute('aria-label', 'Open ' + getRecipeTitle(card));
@@ -1613,6 +1827,8 @@
           }
         });
       });
+
+      updateVisibleCards();
 
       if (modalClose) {
         modalClose.addEventListener('click', closeRecipeModal);

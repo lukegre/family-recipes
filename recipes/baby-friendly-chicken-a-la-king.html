@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT30M",
   "recipeCategory": "Batch",
+  "keywords": "Batch, 30 min, Baby-friendly",
   "ingredients": [
     "500 g chicken thighs or breast",
     "2 carrots",
@@ -41,10 +42,16 @@
     "300 g rice, potatoes or toast"
   ],
   "recipeInstructions": [
-    "Cook chicken gently, then remove and shred.",
-    "Soften carrots and mushrooms, then make a mild creamy sauce with milk, stock and flour.",
-    "Stir in peas and shredded chicken; serve over rice, potatoes or toast."
-  ]
+    "Poach or pan-cook the chicken until cooked through, then rest briefly and shred finely.",
+    "Dice carrots small and slice mushrooms thinly. Soften them in a little butter or olive oil for 8-10 minutes so they become tender enough for the baby portion.",
+    "Whisk flour or cornflour with a splash of milk, then add the remaining milk and low-salt stock. Simmer until the sauce thickens and the carrots are soft.",
+    "Stir in frozen peas and shredded chicken for the final few minutes. Season the adult portion at the table with salt, pepper, herbs or mustard.",
+    "Serve over rice, mashed potato, baked potato or toast fingers. Loosen leftovers with milk when reheating."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Chicken brings protein and iron, milk adds calcium and energy, and peas, carrots and mushrooms make the creamy sauce more balanced."
+  }
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -56,7 +63,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -73,12 +81,17 @@
       <h1 itemprop="name">Baby-Friendly Chicken a la King</h1>
       <p itemprop="description">A mild creamy chicken and veg dinner that works over rice, potatoes or toast fingers.</p>
       <div class="meta"><span class="pill">Batch</span><span class="pill">30 min</span><span class="pill">Baby-friendly</span></div>
+      
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">500 g chicken thighs or breast</li><li itemprop="recipeIngredient ingredients">2 carrots</li><li itemprop="recipeIngredient ingredients">200 g mushrooms</li><li itemprop="recipeIngredient ingredients">150 g frozen peas</li><li itemprop="recipeIngredient ingredients">300 ml whole milk</li><li itemprop="recipeIngredient ingredients">200 ml low-salt chicken stock</li><li itemprop="recipeIngredient ingredients">2 tbsp flour or cornflour</li><li itemprop="recipeIngredient ingredients">300 g rice, potatoes or toast</li></ul>
       <h2>Method</h2>
-      <ol><li itemprop="recipeInstructions">Cook chicken gently, then remove and shred.</li><li itemprop="recipeInstructions">Soften carrots and mushrooms, then make a mild creamy sauce with milk, stock and flour.</li><li itemprop="recipeInstructions">Stir in peas and shredded chicken; serve over rice, potatoes or toast.</li></ol>
-      <p class="note">A mild creamy chicken and veg dinner that works over rice, potatoes or toast fingers.</p>
+      <ol><li itemprop="recipeInstructions">Poach or pan-cook the chicken until cooked through, then rest briefly and shred finely.</li><li itemprop="recipeInstructions">Dice carrots small and slice mushrooms thinly. Soften them in a little butter or olive oil for 8-10 minutes so they become tender enough for the baby portion.</li><li itemprop="recipeInstructions">Whisk flour or cornflour with a splash of milk, then add the remaining milk and low-salt stock. Simmer until the sauce thickens and the carrots are soft.</li><li itemprop="recipeInstructions">Stir in frozen peas and shredded chicken for the final few minutes. Season the adult portion at the table with salt, pepper, herbs or mustard.</li><li itemprop="recipeInstructions">Serve over rice, mashed potato, baked potato or toast fingers. Loosen leftovers with milk when reheating.</li></ol>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Chicken brings protein and iron, milk adds calcium and energy, and peas, carrots and mushrooms make the creamy sauce more balanced.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Keep the sauce unsalted and skip stock cubes unless low-salt. Shred chicken finely, chop mushrooms small, squash peas, and serve with soft rice or potato.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">A mild creamy chicken and veg dinner that works over rice, potatoes or toast fingers.</p>
     </article>
   </main>
 </body>

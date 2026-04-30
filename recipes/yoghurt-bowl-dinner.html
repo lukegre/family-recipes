@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT5M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 5 min, Emergency",
   "ingredients": [
     "600 g Greek yoghurt",
     "4 tbsp ground nuts or seeds",
@@ -37,7 +38,12 @@
   "recipeInstructions": [
     "Assemble in bowls.",
     "Add extra nuts/seeds for staying power."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Greek yoghurt gives protein and calcium; nut butter or ground seeds add fats and minerals. Fruit makes it fresh without cooking."
+  },
+  "isBasedOn": "https://usa.fage/recipes/greek-yogurt-recipes/nut-butter-berry-yogurt-bowl"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -49,7 +55,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -66,12 +73,17 @@
       <h1 itemprop="name">Yoghurt Bowl Dinner</h1>
       <p itemprop="description">Best as an emergency adult meal, not the main family default.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">5 min</span><span class="pill">Emergency</span></div>
+      <p><a href="https://usa.fage/recipes/greek-yogurt-recipes/nut-butter-berry-yogurt-bowl" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">600 g Greek yoghurt</li><li itemprop="recipeIngredient ingredients">4 tbsp ground nuts or seeds</li><li itemprop="recipeIngredient ingredients">300 g berries or banana</li><li itemprop="recipeIngredient ingredients">4 tbsp nut butter</li><li itemprop="recipeIngredient ingredients">1 tbsp honey if needed</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Assemble in bowls.</li><li itemprop="recipeInstructions">Add extra nuts/seeds for staying power.</li></ol>
-      <p class="note">Best as an emergency adult meal, not the main family default.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Greek yoghurt gives protein and calcium; nut butter or ground seeds add fats and minerals. Fruit makes it fresh without cooking.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Use plain full-fat yoghurt. Avoid whole nuts; use smooth nut butter or ground seeds.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Best as an emergency adult meal, not the main family default.</p>
     </article>
   </main>
 </body>

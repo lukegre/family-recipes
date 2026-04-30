@@ -41,6 +41,8 @@ Each meal card links to a generated recipe page with Bring-friendly Schema.org J
 
 ## Tests
 
+The web-app popup and the Bring-facing recipe page are generated from the same fields in `recipes/index.json`. `node scripts/test-recipes.mjs` checks that generated recipe pages include the same detailed method, nutrition note, baby guidance, leftovers note, and similar-recipe link used by the popup.
+
 After rebuilding, validate the local recipe pages:
 
 ```sh

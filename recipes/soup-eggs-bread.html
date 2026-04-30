@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT15M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 10–15 min, No thinking",
   "ingredients": [
     "1 litre frozen soup or jarred soup",
     "4 boiled or fried eggs",
@@ -36,7 +37,12 @@
     "Warm soup on stove.",
     "Add eggs and bread or potatoes.",
     "Finish with olive oil."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Eggs upgrade a light soup with protein and micronutrients. Add olive oil or cheese when everyone needs more staying power."
+  },
+  "isBasedOn": "https://www.food.com/recipe/bread-egg-and-garlic-soup-334232"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -48,7 +54,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -65,12 +72,17 @@
       <h1 itemprop="name">Soup + Eggs + Bread</h1>
       <p itemprop="description">A realistic fatigue meal. Not glamorous, but solid.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">10–15 min</span><span class="pill">No thinking</span></div>
+      <p><a href="https://www.food.com/recipe/bread-egg-and-garlic-soup-334232" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">1 litre frozen soup or jarred soup</li><li itemprop="recipeIngredient ingredients">4 boiled or fried eggs</li><li itemprop="recipeIngredient ingredients">4 slices GF bread or 600 g potatoes</li><li itemprop="recipeIngredient ingredients">2 tbsp olive oil</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Warm soup on stove.</li><li itemprop="recipeInstructions">Add eggs and bread or potatoes.</li><li itemprop="recipeInstructions">Finish with olive oil.</li></ol>
-      <p class="note">A realistic fatigue meal. Not glamorous, but solid.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Eggs upgrade a light soup with protein and micronutrients. Add olive oil or cheese when everyone needs more staying power.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Use low-salt soup if possible. Serve thick soup with fully cooked egg and soft bread fingers.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">A realistic fatigue meal. Not glamorous, but solid.</p>
     </article>
   </main>
 </body>

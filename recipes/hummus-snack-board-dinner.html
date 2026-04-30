@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT7M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 7 min, No-cook",
   "ingredients": [
     "300 g hummus",
     "4 boiled eggs or 400 g cooked chicken",
@@ -37,9 +38,15 @@
     "400 g fruit"
   ],
   "recipeInstructions": [
-    "Put hummus, protein, carbs, fruit and veg on a board or plates.",
-    "Add olive oil, lemon or herbs if you have them."
-  ]
+    "Put hummus, eggs or cooked chicken, avocado, fruit, tomatoes and crackers or toast on plates or a board.",
+    "Add olive oil, lemon, herbs or seeds for the adults if they are within reach.",
+    "For the baby, spread hummus thinly and cut round or firm foods into safe shapes."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Hummus, eggs or chicken, avocado and fruit make a no-cook plate with protein, fats, fibre and enough freshness to feel alive."
+  },
+  "isBasedOn": "https://www.foodandwine.com/appetizers/dips/hummus/hummus-recipes"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -51,7 +58,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -68,12 +76,17 @@
       <h1 itemprop="name">Hummus Snack-Board Dinner</h1>
       <p itemprop="description">For evenings when cooking would tip the whole day over. Still balanced enough to count.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">7 min</span><span class="pill">No-cook</span></div>
+      <p><a href="https://www.foodandwine.com/appetizers/dips/hummus/hummus-recipes" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">300 g hummus</li><li itemprop="recipeIngredient ingredients">4 boiled eggs or 400 g cooked chicken</li><li itemprop="recipeIngredient ingredients">2 avocados</li><li itemprop="recipeIngredient ingredients">250 g cherry tomatoes</li><li itemprop="recipeIngredient ingredients">1 pack GF crackers or toast</li><li itemprop="recipeIngredient ingredients">400 g fruit</li></ul>
       <h2>Method</h2>
-      <ol><li itemprop="recipeInstructions">Put hummus, protein, carbs, fruit and veg on a board or plates.</li><li itemprop="recipeInstructions">Add olive oil, lemon or herbs if you have them.</li></ol>
-      <p class="note">For evenings when cooking would tip the whole day over. Still balanced enough to count.</p>
+      <ol><li itemprop="recipeInstructions">Put hummus, eggs or cooked chicken, avocado, fruit, tomatoes and crackers or toast on plates or a board.</li><li itemprop="recipeInstructions">Add olive oil, lemon, herbs or seeds for the adults if they are within reach.</li><li itemprop="recipeInstructions">For the baby, spread hummus thinly and cut round or firm foods into safe shapes.</li></ol>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Hummus, eggs or chicken, avocado and fruit make a no-cook plate with protein, fats, fibre and enough freshness to feel alive.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Spread hummus thinly, quarter tomatoes lengthwise, and cut egg or chicken into safe soft pieces.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">For evenings when cooking would tip the whole day over. Still balanced enough to count.</p>
     </article>
   </main>
 </body>

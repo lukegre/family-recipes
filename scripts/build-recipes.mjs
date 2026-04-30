@@ -80,6 +80,16 @@ function makeList(items, itemprop) {
   return `<ul>${items.map((item) => `<li${attr}>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
+function recipeMethod(recipe) {
+  return recipe.detailedInstructions && recipe.detailedInstructions.length > 0
+    ? recipe.detailedInstructions
+    : recipe.instructions;
+}
+
+function recipeKeywords(recipe) {
+  return [recipe.type, recipe.time, ...recipe.tags].join(', ');
+}
+
 function makeCard(recipe) {
   const pills = [recipe.type, recipe.time, ...recipe.tags];
   return `      <article class="card" data-type="${escapeHtml(recipe.type)}" data-recipe-page="${escapeHtml(recipePagePath(recipe))}" itemscope itemtype="https://schema.org/Recipe">
@@ -144,15 +154,29 @@ function jsonLdFor(recipe) {
     recipeYield: recipe.yield,
     prepTime: recipe.prepTime,
     recipeCategory: recipe.type,
+    keywords: recipeKeywords(recipe),
     ingredients: recipe.ingredients,
     recipeIngredient: recipe.ingredients,
-    recipeInstructions: recipe.instructions
+    recipeInstructions: recipeMethod(recipe),
+    nutrition: recipe.nutrition ? {
+      '@type': 'NutritionInformation',
+      description: recipe.nutrition
+    } : undefined,
+    isBasedOn: recipe.similarRecipe ? recipe.similarRecipe.url : undefined
   };
 }
 
 function makeRecipePage(recipe) {
   const pills = [recipe.type, recipe.time, ...recipe.tags];
+  const method = recipeMethod(recipe);
   const jsonLd = JSON.stringify(jsonLdFor(recipe), null, 2);
+  const similarRecipeLink = recipe.similarRecipe
+    ? `<p><a href="${escapeHtml(recipe.similarRecipe.url)}" rel="noopener">${escapeHtml(recipe.similarRecipe.label)}</a></p>`
+    : '';
+  const nutritionSection = recipe.nutrition
+    ? `<h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">${escapeHtml(recipe.nutrition)}</span></p>`
+    : '';
 
   return `<!doctype html>
 <html lang="en">
@@ -173,7 +197,8 @@ function makeRecipePage(recipe) {
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -190,12 +215,16 @@ function makeRecipePage(recipe) {
       <h1 itemprop="name">${escapeHtml(recipe.title)}</h1>
       <p itemprop="description">${escapeHtml(recipe.description)}</p>
       <div class="meta">${pills.map((pill) => `<span class="pill">${escapeHtml(pill)}</span>`).join('')}</div>
+      ${similarRecipeLink}
       <h2>Ingredients</h2>
       ${makeList(recipe.ingredients, 'recipeIngredient')}
       <h2>Method</h2>
-      <ol>${recipe.instructions.map((step) => `<li itemprop="recipeInstructions">${escapeHtml(step)}</li>`).join('')}</ol>
-      <p class="note">${escapeHtml(recipe.description)}</p>
+      <ol>${method.map((step) => `<li itemprop="recipeInstructions">${escapeHtml(step)}</li>`).join('')}</ol>
+      ${nutritionSection}
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> ${escapeHtml(recipe.baby)}</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">${escapeHtml(recipe.description)}</p>
     </article>
   </main>
 </body>
@@ -214,7 +243,7 @@ function buildServiceWorker(recipes) {
     ...recipes.map((recipe) => `./${recipePagePath(recipe)}`).sort()
   ];
 
-  return `const CACHE_NAME = 'family-meal-cards-v5';
+  return `const CACHE_NAME = 'family-meal-cards-v7';
 const ASSETS = ${JSON.stringify(assets, null, 2)};
 
 self.addEventListener('install', event => {

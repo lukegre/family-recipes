@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT10M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 10 min, Bad-day meal",
   "ingredients": [
     "500 g cooked rice",
     "4 eggs",
@@ -38,7 +39,12 @@
     "Scramble eggs.",
     "Add rice and vegetables.",
     "Season with tamari."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Eggs add protein and choline, rice gives quick energy, and frozen veg adds colour and fibre with almost no prep."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/egg-fried-rice"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">10-minute Egg Fried Rice</h1>
       <p itemprop="description">Keep frozen veg and eggs stocked at all times.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">10 min</span><span class="pill">Bad-day meal</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/egg-fried-rice" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">500 g cooked rice</li><li itemprop="recipeIngredient ingredients">4 eggs</li><li itemprop="recipeIngredient ingredients">300 g frozen peas or vegetables</li><li itemprop="recipeIngredient ingredients">2 tbsp tamari</li><li itemprop="recipeIngredient ingredients">1 tbsp sesame oil if available</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Scramble eggs.</li><li itemprop="recipeInstructions">Add rice and vegetables.</li><li itemprop="recipeInstructions">Season with tamari.</li></ol>
-      <p class="note">Keep frozen veg and eggs stocked at all times.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Eggs add protein and choline, rice gives quick energy, and frozen veg adds colour and fibre with almost no prep.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Use low-salt tamari or leave seasoning out of baby portion. Ensure peas/veg are soft; egg fully cooked.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Keep frozen veg and eggs stocked at all times.</p>
     </article>
   </main>
 </body>

@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT30M",
   "recipeCategory": "Flexible",
+  "keywords": "Flexible, 30 min, Leftover-friendly",
   "ingredients": [
     "6 eggs",
     "500 g cooked potatoes",
@@ -38,7 +39,12 @@
     "Warm potatoes and veg in pan.",
     "Add beaten eggs and cheese.",
     "Finish under grill or in oven."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Eggs and potatoes make this satisfying; greens add folate and fibre. It is especially useful cold for lunch."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/potato-frittata"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Frittata with Potatoes &amp; Greens</h1>
       <p itemprop="description">Good warm or cold. Useful for lunches without reheating.</p>
       <div class="meta"><span class="pill">Flexible</span><span class="pill">30 min</span><span class="pill">Leftover-friendly</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/potato-frittata" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">6 eggs</li><li itemprop="recipeIngredient ingredients">500 g cooked potatoes</li><li itemprop="recipeIngredient ingredients">2 handfuls spinach or courgette</li><li itemprop="recipeIngredient ingredients">100 g cheese</li><li itemprop="recipeIngredient ingredients">1 handful herbs</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Warm potatoes and veg in pan.</li><li itemprop="recipeInstructions">Add beaten eggs and cheese.</li><li itemprop="recipeInstructions">Finish under grill or in oven.</li></ol>
-      <p class="note">Good warm or cold. Useful for lunches without reheating.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Eggs and potatoes make this satisfying; greens add folate and fibre. It is especially useful cold for lunch.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Cook egg fully. Cut into soft strips or cubes; chop greens finely.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Good warm or cold. Useful for lunches without reheating.</p>
     </article>
   </main>
 </body>

@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT20M",
   "recipeCategory": "Recovery",
+  "keywords": "Recovery, 20 min, Thermomix",
   "ingredients": [
     "2 courgettes",
     "250 g frozen peas",
@@ -38,7 +39,12 @@
     "Cook vegetables and beans with stock.",
     "Blend smooth.",
     "Top with olive oil, seeds or cheese."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Beans make this soup more filling, while peas and greens add folate, fibre and vitamin C. Olive oil helps absorb fat-soluble nutrients."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/curried-spinach-lentil-soup"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Green Power Soup</h1>
       <p itemprop="description">Reheat: Thermomix or stovetop. Add bread, eggs or cheese for extra protein.</p>
       <div class="meta"><span class="pill">Recovery</span><span class="pill">20 min</span><span class="pill">Thermomix</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/curried-spinach-lentil-soup" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">2 courgettes</li><li itemprop="recipeIngredient ingredients">250 g frozen peas</li><li itemprop="recipeIngredient ingredients">2 handfuls spinach</li><li itemprop="recipeIngredient ingredients">1 can white beans</li><li itemprop="recipeIngredient ingredients">2 tbsp olive oil</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Cook vegetables and beans with stock.</li><li itemprop="recipeInstructions">Blend smooth.</li><li itemprop="recipeInstructions">Top with olive oil, seeds or cheese.</li></ol>
-      <p class="note">Reheat: Thermomix or stovetop. Add bread, eggs or cheese for extra protein.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Beans make this soup more filling, while peas and greens add folate, fibre and vitamin C. Olive oil helps absorb fat-soluble nutrients.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Serve thick in a small bowl or on pre-loaded spoons. Add yoghurt to cool it quickly.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Reheat: Thermomix or stovetop. Add bread, eggs or cheese for extra protein.</p>
     </article>
   </main>
 </body>

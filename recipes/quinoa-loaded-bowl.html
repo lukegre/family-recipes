@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT25M",
   "recipeCategory": "Batch",
+  "keywords": "Batch, 25 min, Modular",
   "ingredients": [
     "250 g quinoa",
     "600 g roasted vegetables",
@@ -38,7 +39,12 @@
     "Cook quinoa.",
     "Roast vegetables.",
     "Serve with protein and sauce."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Quinoa, chickpeas or feta, greens and sauce make a balanced bowl with protein, fibre, minerals and enough fat to keep it satisfying."
+  },
+  "isBasedOn": "https://cookieandkate.com/buddha-bowl-recipe/"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Quinoa Loaded Bowl</h1>
       <p itemprop="description">Tip: keep sauce separate; eat warm or room temperature.</p>
       <div class="meta"><span class="pill">Batch</span><span class="pill">25 min</span><span class="pill">Modular</span></div>
+      <p><a href="https://cookieandkate.com/buddha-bowl-recipe/" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">250 g quinoa</li><li itemprop="recipeIngredient ingredients">600 g roasted vegetables</li><li itemprop="recipeIngredient ingredients">1 can chickpeas or 150 g feta</li><li itemprop="recipeIngredient ingredients">2 handfuls greens</li><li itemprop="recipeIngredient ingredients">4 tbsp olive oil or yoghurt sauce</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Cook quinoa.</li><li itemprop="recipeInstructions">Roast vegetables.</li><li itemprop="recipeInstructions">Serve with protein and sauce.</li></ol>
-      <p class="note">Tip: keep sauce separate; eat warm or room temperature.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Quinoa, chickpeas or feta, greens and sauce make a balanced bowl with protein, fibre, minerals and enough fat to keep it satisfying.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Serve deconstructed: soft quinoa, mashed chickpeas, roasted veg strips. Go easy on salty feta.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Tip: keep sauce separate; eat warm or room temperature.</p>
     </article>
   </main>
 </body>

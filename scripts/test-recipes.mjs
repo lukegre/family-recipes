@@ -33,6 +33,24 @@ function getJsonLd(html, file) {
   }
 }
 
+function recipeMethod(recipe) {
+  return recipe.detailedInstructions && recipe.detailedInstructions.length > 0
+    ? recipe.detailedInstructions
+    : recipe.instructions;
+}
+
+function htmlIncludesEscaped(html, value) {
+  const escaped = String(value).replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  }[char]));
+
+  return html.includes(escaped);
+}
+
 function validateRecipeData() {
   const slugs = new Set();
 
@@ -91,10 +109,22 @@ function validateRecipePages() {
     if (!Array.isArray(data.recipeIngredient) || data.recipeIngredient.length === 0) fail(`${relativePath}: missing recipeIngredient`);
     if (!Array.isArray(data.ingredients) || data.ingredients.length === 0) fail(`${relativePath}: missing legacy ingredients`);
     if (JSON.stringify(data.recipeIngredient) !== JSON.stringify(data.ingredients)) fail(`${relativePath}: recipeIngredient and ingredients differ`);
+    if (JSON.stringify(data.recipeInstructions) !== JSON.stringify(recipeMethod(recipe))) fail(`${relativePath}: recipeInstructions must match the web-app popup method`);
     if (!String(data.image || '').startsWith(`${expectedOrigin}/icons/`)) fail(`${relativePath}: image must be an absolute public icon URL`);
     if (String(data.image || '').includes('/../')) fail(`${relativePath}: image contains /../`);
     if (data.url !== `${expectedOrigin}/${relativePath}`) fail(`${relativePath}: url must be the public recipe URL`);
     if (!html.includes('itemprop="recipeIngredient ingredients"')) fail(`${relativePath}: missing dual ingredient microdata`);
+    if (!html.includes('Why it nourishes')) fail(`${relativePath}: missing nutrition section from web-app popup`);
+    if (!html.includes('For your little one')) fail(`${relativePath}: missing baby section from web-app popup`);
+    if (!html.includes('Leftovers / reheating')) fail(`${relativePath}: missing leftovers section from web-app popup`);
+
+    recipeMethod(recipe).forEach((step) => {
+      if (!htmlIncludesEscaped(html, step)) fail(`${relativePath}: missing popup method step: ${step}`);
+    });
+
+    if (recipe.nutrition && !htmlIncludesEscaped(html, recipe.nutrition)) fail(`${relativePath}: missing popup nutrition text`);
+    if (recipe.baby && !htmlIncludesEscaped(html, recipe.baby)) fail(`${relativePath}: missing popup baby text`);
+    if (recipe.similarRecipe && !htmlIncludesEscaped(html, recipe.similarRecipe.label)) fail(`${relativePath}: missing popup similar-recipe link`);
   });
 }
 
@@ -108,4 +138,3 @@ if (failures.length > 0) {
 }
 
 console.log(`Recipe validation passed for ${recipes.length} recipes.`);
-

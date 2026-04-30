@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT15M",
   "recipeCategory": "Flexible",
+  "keywords": "Flexible, 15 min, Assemble",
   "ingredients": [
     "8 GF wraps or corn tortillas",
     "500 g beans, mince or chicken",
@@ -35,10 +36,15 @@
     "200 g yoghurt sauce"
   ],
   "recipeInstructions": [
-    "Warm the protein.",
-    "Put everything on the table.",
-    "Everyone assembles their own."
-  ]
+    "Warm beans, mince or shredded chicken with mild spices and a splash of water so the filling stays soft.",
+    "Set out tortillas or wraps with avocado, tomato or salsa, yoghurt sauce and any leftover vegetables.",
+    "Let everyone build their own, keeping the baby plate deconstructed with soft fillings and no hard raw pieces."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "This is a flexible protein-plus-veg meal: beans add fibre, avocado adds healthy fats, and yoghurt sauce gives protein and calcium."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/collection/taco-recipes"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Tacos / Wraps</h1>
       <p itemprop="description">Good Saturday meal. Also useful for using up leftovers.</p>
       <div class="meta"><span class="pill">Flexible</span><span class="pill">15 min</span><span class="pill">Assemble</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/collection/taco-recipes" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">8 GF wraps or corn tortillas</li><li itemprop="recipeIngredient ingredients">500 g beans, mince or chicken</li><li itemprop="recipeIngredient ingredients">2 avocados</li><li itemprop="recipeIngredient ingredients">250 g tomato or salsa</li><li itemprop="recipeIngredient ingredients">200 g yoghurt sauce</li></ul>
       <h2>Method</h2>
-      <ol><li itemprop="recipeInstructions">Warm the protein.</li><li itemprop="recipeInstructions">Put everything on the table.</li><li itemprop="recipeInstructions">Everyone assembles their own.</li></ol>
-      <p class="note">Good Saturday meal. Also useful for using up leftovers.</p>
+      <ol><li itemprop="recipeInstructions">Warm beans, mince or shredded chicken with mild spices and a splash of water so the filling stays soft.</li><li itemprop="recipeInstructions">Set out tortillas or wraps with avocado, tomato or salsa, yoghurt sauce and any leftover vegetables.</li><li itemprop="recipeInstructions">Let everyone build their own, keeping the baby plate deconstructed with soft fillings and no hard raw pieces.</li></ol>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">This is a flexible protein-plus-veg meal: beans add fibre, avocado adds healthy fats, and yoghurt sauce gives protein and calcium.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Serve fillings separately: avocado, beans squashed flat, soft veg, shredded chicken. Avoid hard raw pieces.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Good Saturday meal. Also useful for using up leftovers.</p>
     </article>
   </main>
 </body>

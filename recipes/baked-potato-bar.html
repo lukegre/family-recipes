@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT55M",
   "recipeCategory": "Flexible",
+  "keywords": "Flexible, 10 + 45 min, Low effort",
   "ingredients": [
     "4 large potatoes",
     "2 cans beans or tuna",
@@ -38,7 +39,12 @@
     "Bake potatoes until soft.",
     "Put toppings on the table.",
     "Everyone builds their own."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Potatoes are filling and rich in potassium. Beans, tuna, cheese or yoghurt turn them into a proper balanced meal."
+  },
+  "isBasedOn": "https://www.peacehealth.org/healthy-you/recipe-baked-potato-bar"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Baked Potato Bar</h1>
       <p itemprop="description">Hands-off and child-friendly. Good weekend option.</p>
       <div class="meta"><span class="pill">Flexible</span><span class="pill">10 + 45 min</span><span class="pill">Low effort</span></div>
+      <p><a href="https://www.peacehealth.org/healthy-you/recipe-baked-potato-bar" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">4 large potatoes</li><li itemprop="recipeIngredient ingredients">2 cans beans or tuna</li><li itemprop="recipeIngredient ingredients">150 g cheese</li><li itemprop="recipeIngredient ingredients">200 g yoghurt or sour cream</li><li itemprop="recipeIngredient ingredients">300 g salad bits</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Bake potatoes until soft.</li><li itemprop="recipeInstructions">Put toppings on the table.</li><li itemprop="recipeInstructions">Everyone builds their own.</li></ol>
-      <p class="note">Hands-off and child-friendly. Good weekend option.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Potatoes are filling and rich in potassium. Beans, tuna, cheese or yoghurt turn them into a proper balanced meal.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Serve mashed potato with yoghurt, soft beans, or cheese in small amounts. Avoid tough potato skin.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Hands-off and child-friendly. Good weekend option.</p>
     </article>
   </main>
 </body>

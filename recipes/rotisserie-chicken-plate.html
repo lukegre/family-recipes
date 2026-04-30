@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT10M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 10 min, No-cook",
   "ingredients": [
     "1 ready-cooked chicken",
     "1 bag salad",
@@ -37,7 +38,12 @@
   "recipeInstructions": [
     "Put everything on plates.",
     "Add sauce and olive oil."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "A good no-cook protein anchor. Add avocado or olive oil plus a carb so it is restorative rather than just snacky."
+  },
+  "isBasedOn": "https://www.mccormickforchefs.com/en-us/recipes/salads-lettuce-wraps-and-side-salads/rotisserie-chicken-power-salad"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -49,7 +55,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -66,12 +73,17 @@
       <h1 itemprop="name">Rotisserie Chicken Plate</h1>
       <p itemprop="description">Good to keep in mind for genuinely depleted days.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">10 min</span><span class="pill">No-cook</span></div>
+      <p><a href="https://www.mccormickforchefs.com/en-us/recipes/salads-lettuce-wraps-and-side-salads/rotisserie-chicken-power-salad" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">1 ready-cooked chicken</li><li itemprop="recipeIngredient ingredients">1 bag salad</li><li itemprop="recipeIngredient ingredients">2 avocados</li><li itemprop="recipeIngredient ingredients">4 rice cakes, GF bread slices or potatoes</li><li itemprop="recipeIngredient ingredients">200 g yoghurt sauce</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Put everything on plates.</li><li itemprop="recipeInstructions">Add sauce and olive oil.</li></ol>
-      <p class="note">Good to keep in mind for genuinely depleted days.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">A good no-cook protein anchor. Add avocado or olive oil plus a carb so it is restorative rather than just snacky.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Check salt level and remove skin. Shred chicken finely; serve with avocado and soft carb.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Good to keep in mind for genuinely depleted days.</p>
     </article>
   </main>
 </body>

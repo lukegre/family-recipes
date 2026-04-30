@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT20M",
   "recipeCategory": "Recovery",
+  "keywords": "Recovery, 20 min, Comforting",
   "ingredients": [
     "250 g rice noodles",
     "400 ml coconut milk",
@@ -38,7 +39,12 @@
     "Simmer coconut milk and stock.",
     "Add protein and veg.",
     "Add rice noodles at the end."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "A soothing bowl with protein from tofu, chicken or prawns. Frozen veg keeps it colourful and rice noodles make it easy to eat."
+  },
+  "isBasedOn": "https://www.theguardian.com/food/article/2024/sep/02/quick-easy-hot-sour-noodle-soup-prawns-recipe-rukmini-iyer"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -50,7 +56,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -67,12 +74,17 @@
       <h1 itemprop="name">Coconut Noodle Soup</h1>
       <p itemprop="description">Make only what you need; noodles are less good as leftovers.</p>
       <div class="meta"><span class="pill">Recovery</span><span class="pill">20 min</span><span class="pill">Comforting</span></div>
+      <p><a href="https://www.theguardian.com/food/article/2024/sep/02/quick-easy-hot-sour-noodle-soup-prawns-recipe-rukmini-iyer" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">250 g rice noodles</li><li itemprop="recipeIngredient ingredients">400 ml coconut milk</li><li itemprop="recipeIngredient ingredients">700 ml stock</li><li itemprop="recipeIngredient ingredients">300 g frozen vegetables</li><li itemprop="recipeIngredient ingredients">400 g tofu, chicken or prawns</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Simmer coconut milk and stock.</li><li itemprop="recipeInstructions">Add protein and veg.</li><li itemprop="recipeInstructions">Add rice noodles at the end.</li></ol>
-      <p class="note">Make only what you need; noodles are less good as leftovers.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">A soothing bowl with protein from tofu, chicken or prawns. Frozen veg keeps it colourful and rice noodles make it easy to eat.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Cut noodles short. Keep broth low salt and temperature safe; offer soft veg/protein pieces.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Make only what you need; noodles are less good as leftovers.</p>
     </article>
   </main>
 </body>

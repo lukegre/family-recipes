@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT8M",
   "recipeCategory": "Fallback",
+  "keywords": "Fallback, 8 min, No-cook",
   "ingredients": [
     "2 tins tuna",
     "2 cans white beans",
@@ -37,7 +38,12 @@
   "recipeInstructions": [
     "Mix everything.",
     "Serve with bread, potatoes or rice cakes."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Tuna adds protein and omega-3s; beans bring fibre and minerals. Tomato and lemon brighten it and add vitamin C."
+  },
+  "isBasedOn": "https://www.budgetbytes.com/tuna-white-bean-salad/"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -49,7 +55,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -66,12 +73,17 @@
       <h1 itemprop="name">Tuna, Beans &amp; Tomato Salad</h1>
       <p itemprop="description">High protein, high convenience. Not toddler-first, but excellent adult fallback.</p>
       <div class="meta"><span class="pill">Fallback</span><span class="pill">8 min</span><span class="pill">No-cook</span></div>
+      <p><a href="https://www.budgetbytes.com/tuna-white-bean-salad/" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">2 tins tuna</li><li itemprop="recipeIngredient ingredients">2 cans white beans</li><li itemprop="recipeIngredient ingredients">300 g tomatoes</li><li itemprop="recipeIngredient ingredients">2 tbsp olive oil</li><li itemprop="recipeIngredient ingredients">1 lemon</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Mix everything.</li><li itemprop="recipeInstructions">Serve with bread, potatoes or rice cakes.</li></ol>
-      <p class="note">High protein, high convenience. Not toddler-first, but excellent adult fallback.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Tuna adds protein and omega-3s; beans bring fibre and minerals. Tomato and lemon brighten it and add vitamin C.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Use tuna occasionally and choose low-salt if possible. Squash beans and cut tomato small.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">High protein, high convenience. Not toddler-first, but excellent adult fallback.</p>
     </article>
   </main>
 </body>

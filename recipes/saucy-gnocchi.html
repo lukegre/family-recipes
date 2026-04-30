@@ -20,6 +20,7 @@
   "recipeYield": "4 servings",
   "prepTime": "PT30M",
   "recipeCategory": "Flexible",
+  "keywords": "Flexible, 30 min, Comfort",
   "ingredients": [
     "600 g gnocchi",
     "500 g tomato or pesto sauce",
@@ -36,7 +37,12 @@
     "Cook gnocchi.",
     "Heat sauce with greens and protein.",
     "Combine generously."
-  ]
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "description": "Gnocchi covers the comfort-carb role. Adding spinach plus sausage, beans or feta turns it from a carb bowl into a more sustaining dinner."
+  },
+  "isBasedOn": "https://www.bbcgoodfood.com/recipes/gnocchi-tomato-bake"
 }</script>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #faf7f0; color: #2f2a24; line-height: 1.5; }
@@ -48,7 +54,8 @@
     li { margin: .2rem 0; }
     .meta { display: flex; gap: .4rem; flex-wrap: wrap; margin: .6rem 0 1rem; }
     .pill { border-radius: 999px; padding: .2rem .55rem; font-size: .82rem; background: #f2eadf; color: #6f665d; }
-    .note, .baby { border: 1px solid #e2d8c8; border-radius: 14px; padding: .7rem .8rem; background: #fffaf0; }
+    .callout, .note, .baby { border: 1px solid #e2d8c8; border-left: 5px solid #6a7f59; border-radius: 14px; padding: .7rem .8rem; background: #eef5eb; color: #3e5d35; }
+    .note, .baby { background: #fffaf0; color: #6f665d; }
     .baby { background: #f7efe1; }
     a { color: #6a7f59; font-weight: 650; }
   </style>
@@ -65,12 +72,17 @@
       <h1 itemprop="name">Saucy Gnocchi</h1>
       <p itemprop="description">Key rule: keep it saucy; dry gnocchi is poor without a microwave.</p>
       <div class="meta"><span class="pill">Flexible</span><span class="pill">30 min</span><span class="pill">Comfort</span></div>
+      <p><a href="https://www.bbcgoodfood.com/recipes/gnocchi-tomato-bake" rel="noopener">Similar recipe</a></p>
       <h2>Ingredients</h2>
       <ul><li itemprop="recipeIngredient ingredients">600 g gnocchi</li><li itemprop="recipeIngredient ingredients">500 g tomato or pesto sauce</li><li itemprop="recipeIngredient ingredients">2 handfuls spinach</li><li itemprop="recipeIngredient ingredients">250 g optional sausage, beans or feta</li></ul>
       <h2>Method</h2>
       <ol><li itemprop="recipeInstructions">Cook gnocchi.</li><li itemprop="recipeInstructions">Heat sauce with greens and protein.</li><li itemprop="recipeInstructions">Combine generously.</li></ol>
-      <p class="note">Key rule: keep it saucy; dry gnocchi is poor without a microwave.</p>
+      <h2>Why it nourishes</h2>
+      <p class="callout" itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation"><span itemprop="description">Gnocchi covers the comfort-carb role. Adding spinach plus sausage, beans or feta turns it from a carb bowl into a more sustaining dinner.</span></p>
+      <h2>For your little one</h2>
       <p class="baby"><b>For 10-month-old</b> Cut gnocchi into small pieces. Keep sauce mild and not too salty.</p>
+      <h2>Leftovers / reheating</h2>
+      <p class="note">Key rule: keep it saucy; dry gnocchi is poor without a microwave.</p>
     </article>
   </main>
 </body>
