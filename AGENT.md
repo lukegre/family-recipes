@@ -23,6 +23,7 @@ Strongly recommended fields:
 - `recipeInstructions`
 - `totalTime`, `prepTime`, or `cookTime` using ISO 8601 durations when known
 - Ingredient quantities where available, because Bring can scale quantities from `baseQuantity` to `requestedQuantity`
+- Use an absolute public image URL in generated recipe pages. Bring's parser can turn relative `../icons/...` values into broken URLs such as `https://lukegre.github.io/../icons/...`, which may make the app handoff fail even when parsing succeeds.
 
 Current implementation:
 
@@ -31,6 +32,8 @@ Current implementation:
 - Each card has a `data-recipe-page="recipes/<slug>.html"` attribute.
 - `recipes/*.html` are per-meal static recipe pages with Schema.org JSON-LD and visible microdata.
 - Ingredient `<li>` elements should use `itemprop="recipeIngredient ingredients"` so modern Schema.org parsers and Bring's legacy parser can both read them.
+- `recipes/index.json` is the canonical recipe source. Do not hand-edit generated recipe pages unless explicitly debugging; update the JSON and run `node scripts/build-recipes.mjs`.
+- `site.config.json` must contain the deployed GitHub Pages origin so generated recipe `url` and `image` fields are absolute public URLs.
 - `service-worker.js` must include generated recipe pages in `ASSETS`, and `CACHE_NAME` should be bumped when cached assets change.
 - `recipes/index.json` lists generated recipe pages for sanity checking.
 
@@ -41,15 +44,20 @@ Bring import behavior:
 - Bring then parses the linked recipe URL and redirects to its app deeplink.
 - On localhost, `127.0.0.1`, or local files, Bring cannot fetch the recipe URL, so the app falls back to Web Share / copy.
 
-Before finishing recipe/import changes, verify:
+Before finishing recipe/import changes, verify locally:
 
-- Inline scripts in `index.html` parse.
-- Every card has a `data-recipe-page`.
-- Every referenced recipe page exists.
-- Every generated recipe page has parseable JSON-LD.
-- Every generated JSON-LD recipe includes `name`, `author`, a non-empty `recipeIngredient` list, and a matching non-empty legacy `ingredients` list.
+- Run `node scripts/build-recipes.mjs` after editing `recipes/index.json`.
+- Run `node scripts/test-recipes.mjs`. This checks card/page consistency, required Schema.org fields, duplicate legacy `ingredients`, dual ingredient microdata, absolute public recipe URLs, and absolute public image URLs.
+- Run an inline script parse check if you changed hand-written JavaScript in `index.html`.
 
-Useful validation command:
+After deployment, verify against Bring:
+
+- Run `node scripts/check-bring-import.js` to check Bring's live backend parser for one recipe.
+- Run `node scripts/check-bring-import.js --all` to check every recipe.
+- If the parser returns `broken imageUrl: https://lukegre.github.io/../icons/icon-512.png`, the live site is still serving stale generated recipe HTML or was built without `siteOrigin`.
+- A successful Bring parser response can still be followed by iOS/PWA cache issues, so if the phone still opens old behavior, delete and re-add the Home Screen app after deployment.
+
+Useful local validation command:
 
 ```sh
 node - <<'NODE'

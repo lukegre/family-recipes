@@ -38,3 +38,19 @@ A simple phone-friendly meal-card app for GitHub Pages.
 ## Bring! import
 
 Each meal card links to a generated recipe page with Bring-friendly Schema.org JSON-LD and microdata. On a public URL such as GitHub Pages, “Import to Bring!” uses Bring’s official recipe deeplink endpoint. When opened locally, the button falls back to the device share/copy flow because Bring cannot fetch local files.
+
+## Tests
+
+After rebuilding, validate the local recipe pages:
+
+```sh
+node scripts/test-recipes.mjs
+```
+
+After deploying, check Bring’s live parser:
+
+```sh
+node scripts/check-bring-import.js
+```
+
+Use `node scripts/check-bring-import.js --all` for every recipe.
