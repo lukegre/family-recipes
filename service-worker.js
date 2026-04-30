@@ -7,6 +7,7 @@ const ASSETS = [
   "./icons/icon-512.png",
   "./recipes/index.json",
   "./recipes/10-minute-egg-fried-rice.html",
+  "./recipes/baby-friendly-chicken-a-la-king.html",
   "./recipes/baked-eggs-and-greens.html",
   "./recipes/baked-potato-bar.html",
   "./recipes/beef-lentil-and-hidden-veg-ragu.html",

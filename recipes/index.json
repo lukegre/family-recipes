@@ -970,6 +970,42 @@
     }
   },
   {
+    "title": "Baby-Friendly Chicken a la King",
+    "slug": "baby-friendly-chicken-a-la-king",
+    "type": "Batch",
+    "time": "30 min",
+    "prepTime": "PT30M",
+    "tags": [
+      "Baby-friendly"
+    ],
+    "yield": "4 servings",
+    "description": "A mild creamy chicken and veg dinner that works over rice, potatoes or toast fingers.",
+    "ingredients": [
+      "500 g chicken thighs or breast",
+      "2 carrots",
+      "200 g mushrooms",
+      "150 g frozen peas",
+      "300 ml whole milk",
+      "200 ml low-salt chicken stock",
+      "2 tbsp flour or cornflour",
+      "300 g rice, potatoes or toast"
+    ],
+    "instructions": [
+      "Cook chicken gently, then remove and shred.",
+      "Soften carrots and mushrooms, then make a mild creamy sauce with milk, stock and flour.",
+      "Stir in peas and shredded chicken; serve over rice, potatoes or toast."
+    ],
+    "baby": "Keep the sauce unsalted and skip stock cubes unless low-salt. Shred chicken finely, chop mushrooms small, squash peas, and serve with soft rice or potato.",
+    "nutrition": "Chicken brings protein and iron, milk adds calcium and energy, and peas, carrots and mushrooms make the creamy sauce more balanced.",
+    "detailedInstructions": [
+      "Poach or pan-cook the chicken until cooked through, then rest briefly and shred finely.",
+      "Dice carrots small and slice mushrooms thinly. Soften them in a little butter or olive oil for 8-10 minutes so they become tender enough for the baby portion.",
+      "Whisk flour or cornflour with a splash of milk, then add the remaining milk and low-salt stock. Simmer until the sauce thickens and the carrots are soft.",
+      "Stir in frozen peas and shredded chicken for the final few minutes. Season the adult portion at the table with salt, pepper, herbs or mustard.",
+      "Serve over rice, mashed potato, baked potato or toast fingers. Loosen leftovers with milk when reheating."
+    ]
+  },
+  {
     "title": "Hummus Snack-Board Dinner",
     "slug": "hummus-snack-board-dinner",
     "type": "Fallback",
