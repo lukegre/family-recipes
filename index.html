@@ -88,8 +88,6 @@
     }
 
     .search-input {
-      -webkit-appearance: none;
-      appearance: none;
       width: 100%;
       min-height: 2.3rem;
       border: 0;
@@ -103,28 +101,6 @@
     .search-input::placeholder {
       color: var(--muted);
       opacity: 1;
-    }
-
-    .search-input::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .clear-search {
-      display: none;
-      min-width: 2.2rem;
-      min-height: 2.2rem;
-      padding: 0;
-      border: 0;
-      background: #f2eadf;
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .clear-search.show {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .filter-group {
@@ -523,8 +499,7 @@
     <div class="search-wrap">
       <span class="search-icon" aria-hidden="true">⌕</span>
       <label class="visually-hidden" for="recipe-search">Search recipes</label>
-      <input class="search-input" id="recipe-search" type="text" inputmode="search" autocomplete="off" placeholder="Search meals or ingredients">
-      <button class="clear-search" id="clear-search" type="button" aria-label="Clear search">×</button>
+      <input class="search-input" id="recipe-search" type="search" inputmode="search" autocomplete="off" placeholder="Search meals or ingredients">
     </div>
     <div class="filter-group" aria-label="Meal type">
       <button class="filter-btn active" data-filter="All">All</button>
@@ -1242,7 +1217,6 @@
       const filterButtons = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.card');
       const searchInput = document.getElementById('recipe-search');
-      const clearSearch = document.getElementById('clear-search');
       const resultCount = document.getElementById('result-count');
       const emptyState = document.getElementById('empty-state');
       const toast = document.getElementById('toast');
@@ -1290,6 +1264,8 @@
               "Baby-Friendly Chicken a la King": "Chicken brings protein and iron, milk adds calcium and energy, and peas, carrots and mushrooms make the creamy sauce more balanced.",
               "Hummus Snack-Board Dinner": "Hummus, eggs or chicken, avocado and fruit make a no-cook plate with protein, fats, fibre and enough freshness to feel alive."
       };
+
+
 
 
 
@@ -1448,6 +1424,8 @@
 
 
 
+
+
       const methodDetails = {
               "Lemon Lentil & Spinach Dahl": [
                       "Finely chop the onion and garlic. Soften them in olive oil or ghee for 5-6 minutes, then add curry powder, cumin, turmeric or garam masala and cook for 30 seconds until fragrant.",
@@ -1498,6 +1476,8 @@
                       "For the baby, spread hummus thinly and cut round or firm foods into safe shapes."
               ]
       };
+
+
 
 
 
@@ -1598,10 +1578,6 @@
           card.style.display = isVisible ? 'flex' : 'none';
           if (isVisible) visibleCount += 1;
         });
-
-        if (clearSearch) {
-          clearSearch.classList.toggle('show', Boolean(query));
-        }
 
         if (resultCount) {
           const filterLabel = activeFilter === 'All' ? '' : ' in ' + activeFilter.toLowerCase();
@@ -1782,14 +1758,6 @@
 
       if (searchInput) {
         searchInput.addEventListener('input', updateVisibleCards);
-      }
-
-      if (clearSearch && searchInput) {
-        clearSearch.addEventListener('click', function () {
-          searchInput.value = '';
-          updateVisibleCards();
-          searchInput.focus();
-        });
       }
 
       document.querySelectorAll('.copy-ingredients').forEach(function (button) {
