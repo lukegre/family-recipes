@@ -1,0 +1,1007 @@
+[
+  {
+    "title": "Lemon Lentil & Spinach Dahl",
+    "slug": "lemon-lentil-and-spinach-dahl",
+    "type": "Batch",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Thermomix-friendly"
+    ],
+    "yield": "4 servings",
+    "description": "Reheat: stovetop with a splash of water. Excellent for lunch leftovers.",
+    "ingredients": [
+      "200 g red lentils",
+      "1 onion",
+      "2 cloves garlic",
+      "1 tbsp curry spices",
+      "400 ml coconut milk",
+      "2 handfuls spinach",
+      "1 lemon"
+    ],
+    "instructions": [
+      "Cook onion, garlic and spices.",
+      "Add lentils, coconut milk and water or stock.",
+      "Simmer until soft, then stir in spinach and lemon."
+    ],
+    "baby": "Keep spices mild. Mash or blend a portion; serve with rice. Avoid adding salt to the baby portion.",
+    "nutrition": "Lentils bring steady plant protein, iron and fibre; lemon helps the body absorb more of the iron from the spinach and lentils.",
+    "similarRecipe": {
+      "label": "Similar highly rated recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/spinach-sweet-potato-lentil-dhal"
+    },
+    "detailedInstructions": [
+      "Finely chop the onion and garlic. Soften them in olive oil or ghee for 5-6 minutes, then add curry powder, cumin, turmeric or garam masala and cook for 30 seconds until fragrant.",
+      "Rinse the red lentils, then add them with coconut milk and enough low-salt stock or water to cover generously. Simmer for 15-20 minutes, stirring often, until the lentils collapse into a creamy dahl.",
+      "Stir through spinach at the end so it wilts but stays green. Finish with lemon juice, taste the adult portion for salt, and loosen with hot water if leftovers thicken.",
+      "Serve with rice, yoghurt and extra lemon. For Thermomix, chop onion and garlic first, saute with spices, then cook lentils with liquid before stirring in spinach."
+    ]
+  },
+  {
+    "title": "Chicken, Sweet Potato & Broccoli Traybake",
+    "slug": "chicken-sweet-potato-and-broccoli-traybake",
+    "type": "Batch",
+    "time": "40 min",
+    "prepTime": "PT40M",
+    "tags": [
+      "Hands-off"
+    ],
+    "yield": "4 servings",
+    "description": "Reheat: covered in oven at 170°C. Good Monday anchor meal.",
+    "ingredients": [
+      "600 g chicken thighs",
+      "2 medium sweet potatoes",
+      "1 head broccoli",
+      "2 tbsp olive oil",
+      "3 tbsp tahini + lemon sauce"
+    ],
+    "instructions": [
+      "Roast chicken and sweet potato first.",
+      "Add broccoli later so it does not burn.",
+      "Finish with tahini-lemon dressing."
+    ],
+    "baby": "Offer soft shredded chicken, mashed sweet potato, and very soft broccoli florets. Cut into safe finger-food sizes.",
+    "nutrition": "Chicken gives complete protein while sweet potato adds slow-release carbs and beta-carotene. Broccoli brings vitamin C and folate.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://realfood.tesco.com/recipes/chicken-and-sweet-potato-traybake.html"
+    },
+    "detailedInstructions": [
+      "Cut sweet potato into even chunks and roast with olive oil for 15 minutes so it gets a head start.",
+      "Add chicken thighs, season the adult portion, and roast until the chicken is cooked through and the potato is soft.",
+      "Add broccoli for the final 10-12 minutes so it stays bright rather than scorched. Finish with a quick tahini, lemon and yoghurt sauce."
+    ]
+  },
+  {
+    "title": "Quinoa Loaded Bowl",
+    "slug": "quinoa-loaded-bowl",
+    "type": "Batch",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Modular"
+    ],
+    "yield": "4 servings",
+    "description": "Tip: keep sauce separate; eat warm or room temperature.",
+    "ingredients": [
+      "250 g quinoa",
+      "600 g roasted vegetables",
+      "1 can chickpeas or 150 g feta",
+      "2 handfuls greens",
+      "4 tbsp olive oil or yoghurt sauce"
+    ],
+    "instructions": [
+      "Cook quinoa.",
+      "Roast vegetables.",
+      "Serve with protein and sauce."
+    ],
+    "baby": "Serve deconstructed: soft quinoa, mashed chickpeas, roasted veg strips. Go easy on salty feta.",
+    "nutrition": "Quinoa, chickpeas or feta, greens and sauce make a balanced bowl with protein, fibre, minerals and enough fat to keep it satisfying.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://cookieandkate.com/buddha-bowl-recipe/"
+    }
+  },
+  {
+    "title": "Chickpea Tomato Feta Skillet",
+    "slug": "chickpea-tomato-feta-skillet",
+    "type": "Recovery",
+    "time": "20 min",
+    "prepTime": "PT20M",
+    "tags": [
+      "Low effort"
+    ],
+    "yield": "4 servings",
+    "description": "A strong Thursday meal: warm, fast, and forgiving.",
+    "ingredients": [
+      "2 cans chickpeas",
+      "1 can chopped tomatoes",
+      "2 cloves garlic",
+      "150 g feta",
+      "1 handful herbs"
+    ],
+    "instructions": [
+      "Simmer tomatoes, garlic and chickpeas.",
+      "Add feta at the end.",
+      "Serve with rice, potatoes or GF bread."
+    ],
+    "baby": "Squash chickpeas flat to reduce choking risk. Keep feta minimal because it is salty.",
+    "nutrition": "Chickpeas add fibre and plant protein, tomatoes add vitamin C, and feta gives flavour so the meal feels generous with little effort.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://presidentcheese.com/recipes/feta-cheese/president-feta-chickpea-kale-skillet/"
+    }
+  },
+  {
+    "title": "Green Power Soup",
+    "slug": "green-power-soup",
+    "type": "Recovery",
+    "time": "20 min",
+    "prepTime": "PT20M",
+    "tags": [
+      "Thermomix"
+    ],
+    "yield": "4 servings",
+    "description": "Reheat: Thermomix or stovetop. Add bread, eggs or cheese for extra protein.",
+    "ingredients": [
+      "2 courgettes",
+      "250 g frozen peas",
+      "2 handfuls spinach",
+      "1 can white beans",
+      "2 tbsp olive oil"
+    ],
+    "instructions": [
+      "Cook vegetables and beans with stock.",
+      "Blend smooth.",
+      "Top with olive oil, seeds or cheese."
+    ],
+    "baby": "Serve thick in a small bowl or on pre-loaded spoons. Add yoghurt to cool it quickly.",
+    "nutrition": "Beans make this soup more filling, while peas and greens add folate, fibre and vitamin C. Olive oil helps absorb fat-soluble nutrients.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/curried-spinach-lentil-soup"
+    }
+  },
+  {
+    "title": "Baked Eggs & Greens",
+    "slug": "baked-eggs-and-greens",
+    "type": "Recovery",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Protein-rich"
+    ],
+    "yield": "4 servings",
+    "description": "Best fresh, but sauce base can be made ahead.",
+    "ingredients": [
+      "6 eggs",
+      "500 ml tomato base",
+      "2 handfuls spinach",
+      "1 handful herbs",
+      "100 g optional feta"
+    ],
+    "instructions": [
+      "Warm tomato base in pan.",
+      "Add greens.",
+      "Crack in eggs and bake or cover until set."
+    ],
+    "baby": "Cook eggs fully until firm. Chop spinach finely. Serve with soft toast fingers or potato.",
+    "nutrition": "Eggs are rich in choline, iodine and protein; greens add folate and magnesium. Serve with a carb to make it a full recovery meal.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/baked-eggs-spinach-tomato"
+    }
+  },
+  {
+    "title": "Thai Curry",
+    "slug": "thai-curry",
+    "type": "Flexible",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Family favourite"
+    ],
+    "yield": "4 servings",
+    "description": "Make it saucy so leftovers reheat well.",
+    "ingredients": [
+      "2 tbsp curry paste",
+      "400 ml coconut milk",
+      "600 g vegetables",
+      "500 g chicken, tofu or chickpeas",
+      "300 g rice"
+    ],
+    "instructions": [
+      "Simmer curry paste and coconut milk.",
+      "Add protein and vegetables.",
+      "Serve with rice."
+    ],
+    "baby": "Keep baby portion mild before adding extra curry paste or chilli. Serve rice with soft veg and shredded protein.",
+    "nutrition": "Coconut milk and rice make it comforting, while vegetables plus chicken, tofu or chickpeas cover protein and fibre. Keep plenty of veg in the pan.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.sidechef.com/recipes/5348/vegetable_tofu_coconut_curry/"
+    },
+    "detailedInstructions": [
+      "Fry curry paste briefly in a little oil, then add coconut milk and stir until it becomes a smooth sauce.",
+      "Add chicken, tofu or chickpeas with the vegetables that need longest cooking first. Simmer gently until tender.",
+      "Finish with lime or lemon and serve over rice. Keep a mild baby portion aside before adding extra paste or chilli."
+    ]
+  },
+  {
+    "title": "Tacos / Wraps",
+    "slug": "tacos-wraps",
+    "type": "Flexible",
+    "time": "15 min",
+    "prepTime": "PT15M",
+    "tags": [
+      "Assemble"
+    ],
+    "yield": "4 servings",
+    "description": "Good Saturday meal. Also useful for using up leftovers.",
+    "ingredients": [
+      "8 GF wraps or corn tortillas",
+      "500 g beans, mince or chicken",
+      "2 avocados",
+      "250 g tomato or salsa",
+      "200 g yoghurt sauce"
+    ],
+    "instructions": [
+      "Warm the protein.",
+      "Put everything on the table.",
+      "Everyone assembles their own."
+    ],
+    "baby": "Serve fillings separately: avocado, beans squashed flat, soft veg, shredded chicken. Avoid hard raw pieces.",
+    "nutrition": "This is a flexible protein-plus-veg meal: beans add fibre, avocado adds healthy fats, and yoghurt sauce gives protein and calcium.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/collection/taco-recipes"
+    },
+    "detailedInstructions": [
+      "Warm beans, mince or shredded chicken with mild spices and a splash of water so the filling stays soft.",
+      "Set out tortillas or wraps with avocado, tomato or salsa, yoghurt sauce and any leftover vegetables.",
+      "Let everyone build their own, keeping the baby plate deconstructed with soft fillings and no hard raw pieces."
+    ]
+  },
+  {
+    "title": "Saucy Gnocchi",
+    "slug": "saucy-gnocchi",
+    "type": "Flexible",
+    "time": "30 min",
+    "prepTime": "PT30M",
+    "tags": [
+      "Comfort"
+    ],
+    "yield": "4 servings",
+    "description": "Key rule: keep it saucy; dry gnocchi is poor without a microwave.",
+    "ingredients": [
+      "600 g gnocchi",
+      "500 g tomato or pesto sauce",
+      "2 handfuls spinach",
+      "250 g optional sausage, beans or feta"
+    ],
+    "instructions": [
+      "Cook gnocchi.",
+      "Heat sauce with greens and protein.",
+      "Combine generously."
+    ],
+    "baby": "Cut gnocchi into small pieces. Keep sauce mild and not too salty.",
+    "nutrition": "Gnocchi covers the comfort-carb role. Adding spinach plus sausage, beans or feta turns it from a carb bowl into a more sustaining dinner.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/gnocchi-tomato-bake"
+    }
+  },
+  {
+    "title": "10-minute Egg Fried Rice",
+    "slug": "10-minute-egg-fried-rice",
+    "type": "Fallback",
+    "time": "10 min",
+    "prepTime": "PT10M",
+    "tags": [
+      "Bad-day meal"
+    ],
+    "yield": "4 servings",
+    "description": "Keep frozen veg and eggs stocked at all times.",
+    "ingredients": [
+      "500 g cooked rice",
+      "4 eggs",
+      "300 g frozen peas or vegetables",
+      "2 tbsp tamari",
+      "1 tbsp sesame oil if available"
+    ],
+    "instructions": [
+      "Scramble eggs.",
+      "Add rice and vegetables.",
+      "Season with tamari."
+    ],
+    "baby": "Use low-salt tamari or leave seasoning out of baby portion. Ensure peas/veg are soft; egg fully cooked.",
+    "nutrition": "Eggs add protein and choline, rice gives quick energy, and frozen veg adds colour and fibre with almost no prep.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/egg-fried-rice"
+    }
+  },
+  {
+    "title": "Soup + Eggs + Bread",
+    "slug": "soup-eggs-bread",
+    "type": "Fallback",
+    "time": "10–15 min",
+    "prepTime": "PT15M",
+    "tags": [
+      "No thinking"
+    ],
+    "yield": "4 servings",
+    "description": "A realistic fatigue meal. Not glamorous, but solid.",
+    "ingredients": [
+      "1 litre frozen soup or jarred soup",
+      "4 boiled or fried eggs",
+      "4 slices GF bread or 600 g potatoes",
+      "2 tbsp olive oil"
+    ],
+    "instructions": [
+      "Warm soup on stove.",
+      "Add eggs and bread or potatoes.",
+      "Finish with olive oil."
+    ],
+    "baby": "Use low-salt soup if possible. Serve thick soup with fully cooked egg and soft bread fingers.",
+    "nutrition": "Eggs upgrade a light soup with protein and micronutrients. Add olive oil or cheese when everyone needs more staying power.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.food.com/recipe/bread-egg-and-garlic-soup-334232"
+    }
+  },
+  {
+    "title": "Yoghurt Bowl Dinner",
+    "slug": "yoghurt-bowl-dinner",
+    "type": "Fallback",
+    "time": "5 min",
+    "prepTime": "PT5M",
+    "tags": [
+      "Emergency"
+    ],
+    "yield": "4 servings",
+    "description": "Best as an emergency adult meal, not the main family default.",
+    "ingredients": [
+      "600 g Greek yoghurt",
+      "4 tbsp ground nuts or seeds",
+      "300 g berries or banana",
+      "4 tbsp nut butter",
+      "1 tbsp honey if needed"
+    ],
+    "instructions": [
+      "Assemble in bowls.",
+      "Add extra nuts/seeds for staying power."
+    ],
+    "baby": "Use plain full-fat yoghurt. Avoid whole nuts; use smooth nut butter or ground seeds.",
+    "nutrition": "Greek yoghurt gives protein and calcium; nut butter or ground seeds add fats and minerals. Fruit makes it fresh without cooking.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://usa.fage/recipes/greek-yogurt-recipes/nut-butter-berry-yogurt-bowl"
+    }
+  },
+  {
+    "title": "Turkey or Lentil Bolognese",
+    "slug": "turkey-or-lentil-bolognese",
+    "type": "Batch",
+    "time": "35 min",
+    "prepTime": "PT35M",
+    "tags": [
+      "Freezer-friendly"
+    ],
+    "yield": "4 servings",
+    "description": "Reheat: stovetop with splash water. Make double and freeze sauce.",
+    "ingredients": [
+      "500 g turkey mince or 250 g red lentils",
+      "700 ml passata or canned tomatoes",
+      "1 carrot, 1 celery stick, 1 onion",
+      "1 tbsp Italian herbs",
+      "400 g GF pasta or potatoes"
+    ],
+    "instructions": [
+      "Cook the veg base slowly if you can.",
+      "Add mince or lentils and tomatoes.",
+      "Simmer until rich."
+    ],
+    "baby": "Keep baby portion low salt. Serve sauce with small pasta, potato, or soft veg; mince should be finely broken up.",
+    "nutrition": "Turkey brings lean protein and zinc; lentils add iron and fibre. The veg base quietly increases colour and micronutrients.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/turkey-bolognese"
+    }
+  },
+  {
+    "title": "Moroccan Chickpea & Carrot Stew",
+    "slug": "moroccan-chickpea-and-carrot-stew",
+    "type": "Batch",
+    "time": "30 min",
+    "prepTime": "PT30M",
+    "tags": [
+      "Plant-based"
+    ],
+    "yield": "4 servings",
+    "description": "Reheat: stovetop. Add yoghurt or feta for protein and richness.",
+    "ingredients": [
+      "2 cans chickpeas",
+      "500 g carrots",
+      "1 can chopped tomatoes",
+      "2 tsp cumin, cinnamon and paprika",
+      "300 g rice or quinoa"
+    ],
+    "instructions": [
+      "Cook spices briefly in oil.",
+      "Add carrots, tomatoes and chickpeas.",
+      "Simmer until soft and sweet."
+    ],
+    "baby": "Keep spices gentle. Squash chickpeas and make carrots very soft.",
+    "nutrition": "Chickpeas and carrots make this fibre-rich and gentle. Yoghurt or feta adds protein and fat for a more complete bowl.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://food52.com/recipes/33679-moroccan-carrot-and-chickpea-stew"
+    }
+  },
+  {
+    "title": "Salmon Potato Traybake",
+    "slug": "salmon-potato-traybake",
+    "type": "Batch",
+    "time": "35 min",
+    "prepTime": "PT35M",
+    "tags": [
+      "Omega-3"
+    ],
+    "yield": "4 servings",
+    "description": "Best fresh. Leftovers work cold/room temp as a lunch bowl.",
+    "ingredients": [
+      "4 salmon fillets",
+      "800 g baby potatoes",
+      "400 g green beans or broccoli",
+      "1 lemon",
+      "2 tbsp olive oil"
+    ],
+    "instructions": [
+      "Roast potatoes first.",
+      "Add salmon and greens for the last 12–15 min.",
+      "Finish with lemon and olive oil."
+    ],
+    "baby": "Check carefully for bones. Flake salmon; serve with mashed potato and soft green beans.",
+    "nutrition": "Salmon brings omega-3 fats, iodine and protein; potatoes provide gentle carbs and greens add folate and vitamin C.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/honey-mustard-salmon-potato-and-tenderstem-traybake/"
+    }
+  },
+  {
+    "title": "Red Pesto Beans on Toast",
+    "slug": "red-pesto-beans-on-toast",
+    "type": "Recovery",
+    "time": "12 min",
+    "prepTime": "PT12M",
+    "tags": [
+      "Pantry meal"
+    ],
+    "yield": "4 servings",
+    "description": "Very good Thursday option: minimal chopping, high satisfaction.",
+    "ingredients": [
+      "2 cans white beans",
+      "4 tbsp red pesto",
+      "2 handfuls spinach",
+      "4 slices GF toast",
+      "50 g parmesan or feta"
+    ],
+    "instructions": [
+      "Warm beans with pesto and splash water.",
+      "Wilt in spinach.",
+      "Serve on toast with cheese."
+    ],
+    "baby": "Use pesto sparingly because it can be salty. Squash beans and serve on soft toast strips.",
+    "nutrition": "White beans are the quiet hero here: fibre, plant protein and minerals. Spinach and cheese round it out quickly.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.jamieoliver.com/recipes/beans/lemony-pesto-beans/"
+    }
+  },
+  {
+    "title": "Omelette Plate",
+    "slug": "omelette-plate",
+    "type": "Recovery",
+    "time": "15 min",
+    "prepTime": "PT15M",
+    "tags": [
+      "Protein-first"
+    ],
+    "yield": "4 servings",
+    "description": "Not fancy, but ideal when the household is tired.",
+    "ingredients": [
+      "6 eggs",
+      "100 g cheese or feta",
+      "2 handfuls spinach",
+      "250 g cherry tomatoes",
+      "2 avocados, bread or potatoes"
+    ],
+    "instructions": [
+      "Make a simple omelette.",
+      "Add greens and cheese.",
+      "Serve with raw veg and a carb."
+    ],
+    "baby": "Cook egg through. Cut into strips; serve with soft avocado or tomato pieces.",
+    "nutrition": "Eggs are nutrient-dense and fast, with protein, choline and iodine. Add avocado, potatoes or bread so it feels like dinner.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/perfect-omelette"
+    }
+  },
+  {
+    "title": "Coconut Noodle Soup",
+    "slug": "coconut-noodle-soup",
+    "type": "Recovery",
+    "time": "20 min",
+    "prepTime": "PT20M",
+    "tags": [
+      "Comforting"
+    ],
+    "yield": "4 servings",
+    "description": "Make only what you need; noodles are less good as leftovers.",
+    "ingredients": [
+      "250 g rice noodles",
+      "400 ml coconut milk",
+      "700 ml stock",
+      "300 g frozen vegetables",
+      "400 g tofu, chicken or prawns"
+    ],
+    "instructions": [
+      "Simmer coconut milk and stock.",
+      "Add protein and veg.",
+      "Add rice noodles at the end."
+    ],
+    "baby": "Cut noodles short. Keep broth low salt and temperature safe; offer soft veg/protein pieces.",
+    "nutrition": "A soothing bowl with protein from tofu, chicken or prawns. Frozen veg keeps it colourful and rice noodles make it easy to eat.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.theguardian.com/food/article/2024/sep/02/quick-easy-hot-sour-noodle-soup-prawns-recipe-rukmini-iyer"
+    }
+  },
+  {
+    "title": "Baked Potato Bar",
+    "slug": "baked-potato-bar",
+    "type": "Flexible",
+    "time": "10 + 45 min",
+    "prepTime": "PT55M",
+    "tags": [
+      "Low effort"
+    ],
+    "yield": "4 servings",
+    "description": "Hands-off and child-friendly. Good weekend option.",
+    "ingredients": [
+      "4 large potatoes",
+      "2 cans beans or tuna",
+      "150 g cheese",
+      "200 g yoghurt or sour cream",
+      "300 g salad bits"
+    ],
+    "instructions": [
+      "Bake potatoes until soft.",
+      "Put toppings on the table.",
+      "Everyone builds their own."
+    ],
+    "baby": "Serve mashed potato with yoghurt, soft beans, or cheese in small amounts. Avoid tough potato skin.",
+    "nutrition": "Potatoes are filling and rich in potassium. Beans, tuna, cheese or yoghurt turn them into a proper balanced meal.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.peacehealth.org/healthy-you/recipe-baked-potato-bar"
+    }
+  },
+  {
+    "title": "Frittata with Potatoes & Greens",
+    "slug": "frittata-with-potatoes-and-greens",
+    "type": "Flexible",
+    "time": "30 min",
+    "prepTime": "PT30M",
+    "tags": [
+      "Leftover-friendly"
+    ],
+    "yield": "4 servings",
+    "description": "Good warm or cold. Useful for lunches without reheating.",
+    "ingredients": [
+      "6 eggs",
+      "500 g cooked potatoes",
+      "2 handfuls spinach or courgette",
+      "100 g cheese",
+      "1 handful herbs"
+    ],
+    "instructions": [
+      "Warm potatoes and veg in pan.",
+      "Add beaten eggs and cheese.",
+      "Finish under grill or in oven."
+    ],
+    "baby": "Cook egg fully. Cut into soft strips or cubes; chop greens finely.",
+    "nutrition": "Eggs and potatoes make this satisfying; greens add folate and fibre. It is especially useful cold for lunch.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/potato-frittata"
+    }
+  },
+  {
+    "title": "Halloumi Veg Bowls",
+    "slug": "halloumi-veg-bowls",
+    "type": "Flexible",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Vegetarian"
+    ],
+    "yield": "4 servings",
+    "description": "Best fresh, but components work well for lunch bowls.",
+    "ingredients": [
+      "250 g halloumi",
+      "600 g courgette or peppers",
+      "300 g rice or quinoa",
+      "200 g hummus",
+      "1 lemon"
+    ],
+    "instructions": [
+      "Pan-fry halloumi.",
+      "Cook or roast veg.",
+      "Serve with grains and hummus."
+    ],
+    "baby": "Halloumi is salty, so offer only a little. Focus on soft veg, hummus and grains.",
+    "nutrition": "Halloumi gives quick protein and satisfaction, while grains, veg and hummus add fibre, colour and slower energy.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/halloumi-buddha-bowl"
+    }
+  },
+  {
+    "title": "Rotisserie Chicken Plate",
+    "slug": "rotisserie-chicken-plate",
+    "type": "Fallback",
+    "time": "10 min",
+    "prepTime": "PT10M",
+    "tags": [
+      "No-cook"
+    ],
+    "yield": "4 servings",
+    "description": "Good to keep in mind for genuinely depleted days.",
+    "ingredients": [
+      "1 ready-cooked chicken",
+      "1 bag salad",
+      "2 avocados",
+      "4 rice cakes, GF bread slices or potatoes",
+      "200 g yoghurt sauce"
+    ],
+    "instructions": [
+      "Put everything on plates.",
+      "Add sauce and olive oil."
+    ],
+    "baby": "Check salt level and remove skin. Shred chicken finely; serve with avocado and soft carb.",
+    "nutrition": "A good no-cook protein anchor. Add avocado or olive oil plus a carb so it is restorative rather than just snacky.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.mccormickforchefs.com/en-us/recipes/salads-lettuce-wraps-and-side-salads/rotisserie-chicken-power-salad"
+    }
+  },
+  {
+    "title": "Tuna, Beans & Tomato Salad",
+    "slug": "tuna-beans-and-tomato-salad",
+    "type": "Fallback",
+    "time": "8 min",
+    "prepTime": "PT8M",
+    "tags": [
+      "No-cook"
+    ],
+    "yield": "4 servings",
+    "description": "High protein, high convenience. Not toddler-first, but excellent adult fallback.",
+    "ingredients": [
+      "2 tins tuna",
+      "2 cans white beans",
+      "300 g tomatoes",
+      "2 tbsp olive oil",
+      "1 lemon"
+    ],
+    "instructions": [
+      "Mix everything.",
+      "Serve with bread, potatoes or rice cakes."
+    ],
+    "baby": "Use tuna occasionally and choose low-salt if possible. Squash beans and cut tomato small.",
+    "nutrition": "Tuna adds protein and omega-3s; beans bring fibre and minerals. Tomato and lemon brighten it and add vitamin C.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.budgetbytes.com/tuna-white-bean-salad/"
+    }
+  },
+  {
+    "title": "Freezer Soup Upgrade",
+    "slug": "freezer-soup-upgrade",
+    "type": "Fallback",
+    "time": "10 min",
+    "prepTime": "PT10M",
+    "tags": [
+      "Emergency"
+    ],
+    "yield": "4 servings",
+    "description": "Turns a light soup into a proper dinner.",
+    "ingredients": [
+      "1 litre frozen soup",
+      "1 can white beans or lentils",
+      "2 tbsp olive oil",
+      "4 tbsp seeds or cheese",
+      "4 slices GF bread"
+    ],
+    "instructions": [
+      "Reheat soup on stove.",
+      "Add beans or lentils.",
+      "Top with oil, seeds or cheese."
+    ],
+    "baby": "Keep baby portion low salt. Blend beans/lentils into soup or mash well.",
+    "nutrition": "Beans or lentils turn soup into a more sustaining meal, adding protein, fibre and iron without much extra effort.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://alwaysfromscratch.com/white-bean-and-lentil-soup/"
+    }
+  },
+  {
+    "title": "Golden Chicken, Rice & Greens Pot",
+    "slug": "golden-chicken-rice-and-greens-pot",
+    "type": "Batch",
+    "time": "35 min",
+    "prepTime": "PT35M",
+    "tags": [
+      "One-pot"
+    ],
+    "yield": "4 servings",
+    "description": "A gentle all-in-one meal for tired weeks: protein, carbs, greens and enough softness for leftovers.",
+    "ingredients": [
+      "600 g chicken thighs",
+      "300 g brown rice or basmati",
+      "3 carrots",
+      "2 handfuls spinach or kale",
+      "1 tsp turmeric, ginger and garlic",
+      "200 g Greek yoghurt"
+    ],
+    "instructions": [
+      "Soften garlic, ginger and carrots with turmeric.",
+      "Add rice, chicken and stock; simmer until rice is tender.",
+      "Shred chicken, stir in greens, and serve with yoghurt."
+    ],
+    "baby": "Keep stock low salt. Shred chicken finely, mash carrots, and chop greens small.",
+    "nutrition": "Chicken, rice and greens give protein, gentle carbs and folate in one pot. Ginger and turmeric keep it warming without needing heat.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.ontrac5.com/recipes/one-pot-turmeric-chicken-and-rice"
+    }
+  },
+  {
+    "title": "Beef, Lentil & Hidden Veg Ragu",
+    "slug": "beef-lentil-and-hidden-veg-ragu",
+    "type": "Batch",
+    "time": "40 min",
+    "prepTime": "PT40M",
+    "tags": [
+      "Iron-rich"
+    ],
+    "yield": "4 servings",
+    "description": "Make a double batch. It freezes well and brings iron, zinc and fibre without feeling worthy.",
+    "ingredients": [
+      "500 g beef mince",
+      "150 g red lentils",
+      "700 ml passata",
+      "1 carrot, 1 courgette, 1 onion",
+      "1 tbsp Italian herbs",
+      "400 g GF pasta or polenta"
+    ],
+    "instructions": [
+      "Cook onion, grated carrot and courgette until soft.",
+      "Add beef, lentils, passata and herbs.",
+      "Simmer until rich; loosen with water if needed."
+    ],
+    "baby": "Break mince up finely and keep salt out. Serve with small pasta, potato, polenta or soft veg.",
+    "nutrition": "Beef is rich in bioavailable iron and B12; lentils and hidden veg add fibre so the sauce is hearty and steadying.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bbcgoodfood.com/recipes/lentil-ragu"
+    },
+    "detailedInstructions": [
+      "Cook onion, carrot and courgette slowly until soft and sweet. Add garlic and herbs for the final minute.",
+      "Brown the beef, breaking it up finely, then stir in red lentils and passata with enough water to keep it saucy.",
+      "Simmer for 25-30 minutes until the lentils disappear into the sauce. Serve with pasta, potatoes or polenta and freeze extra portions."
+    ]
+  },
+  {
+    "title": "Thermomix Carrot, Ginger & Red Lentil Soup",
+    "slug": "thermomix-carrot-ginger-and-red-lentil-soup",
+    "type": "Batch",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Thermomix"
+    ],
+    "yield": "4 servings",
+    "description": "Good as dinner with eggs, toast or cheese; excellent as a lunch thermos the next day.",
+    "ingredients": [
+      "600 g carrots",
+      "200 g red lentils",
+      "2 cm ginger",
+      "400 ml coconut milk",
+      "700 ml stock",
+      "1 lime or lemon"
+    ],
+    "instructions": [
+      "Chop carrot and ginger, then saute briefly.",
+      "Add lentils, stock and coconut milk; cook until soft.",
+      "Blend smooth and finish with citrus."
+    ],
+    "baby": "Keep ginger gentle and stock low salt. Serve thick on pre-loaded spoons with yoghurt to cool.",
+    "nutrition": "Red lentils add protein and iron, carrots bring beta-carotene, and coconut milk makes it satisfying enough for tired evenings.",
+    "similarRecipe": {
+      "label": "Similar Thermomix recipe",
+      "url": "https://cookidoo.thermomix.com/recipes/recipe/en-US/r168151"
+    },
+    "detailedInstructions": [
+      "Chop carrot, onion and ginger, then saute briefly with olive oil until fragrant.",
+      "Add rinsed red lentils, stock and coconut milk. Cook until the carrots and lentils are very soft.",
+      "Blend until smooth, then finish with lemon or lime. Add yoghurt, eggs or toast alongside if it needs to be a fuller dinner."
+    ]
+  },
+  {
+    "title": "Sardine Tomato Pasta",
+    "slug": "sardine-tomato-pasta",
+    "type": "Recovery",
+    "time": "15 min",
+    "prepTime": "PT15M",
+    "tags": [
+      "Omega-3"
+    ],
+    "yield": "4 servings",
+    "description": "Fast, mineral-rich and surprisingly satisfying. Use tuna or salmon if sardines are a hard sell.",
+    "ingredients": [
+      "2 tins sardines",
+      "500 ml passata or 300 g cherry tomatoes",
+      "2 cloves garlic",
+      "2 handfuls spinach",
+      "400 g GF pasta",
+      "1 lemon"
+    ],
+    "instructions": [
+      "Cook pasta while garlic and tomatoes simmer.",
+      "Fold in sardines and spinach.",
+      "Finish with lemon and olive oil."
+    ],
+    "baby": "Check carefully for bones and choose low-salt fish if possible. Flake finely and cut pasta small.",
+    "nutrition": "Sardines are rich in omega-3s, calcium and vitamin D. Tomato and lemon add brightness and help balance the richness.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.lacucinaitaliana.com/italian-food/how-to-cook/sardines-with-tomato-sauce-recipe"
+    }
+  },
+  {
+    "title": "Miso Butter Beans & Greens",
+    "slug": "miso-butter-beans-and-greens",
+    "type": "Recovery",
+    "time": "12 min",
+    "prepTime": "PT12M",
+    "tags": [
+      "Pantry"
+    ],
+    "yield": "4 servings",
+    "description": "Creamy, savoury and almost no chopping. Good when you need real food quickly.",
+    "ingredients": [
+      "2 cans butter beans",
+      "1 tbsp white miso",
+      "2 handfuls spinach or chard",
+      "2 tbsp butter or olive oil",
+      "1 lemon",
+      "300 g rice or 4 slices toast"
+    ],
+    "instructions": [
+      "Warm beans with a splash of water.",
+      "Stir in miso, butter or oil, and greens.",
+      "Serve over rice or toast with lemon."
+    ],
+    "baby": "Miso is salty, so set aside beans before adding it. Squash beans and chop greens finely.",
+    "nutrition": "Butter beans bring fibre and plant protein; greens add folate and magnesium. Miso gives depth, so keep extra salt low.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.bonappetit.com/recipe/brothy-beans"
+    }
+  },
+  {
+    "title": "Rainbow Nourish Plates",
+    "slug": "rainbow-nourish-plates",
+    "type": "Flexible",
+    "time": "20 min",
+    "prepTime": "PT20M",
+    "tags": [
+      "Build-your-own"
+    ],
+    "yield": "4 servings",
+    "description": "Very much in the gentle, abundant bowl-meal direction: flexible, colourful and leftover-friendly.",
+    "ingredients": [
+      "300 g cooked quinoa or rice",
+      "600 g roasted or raw vegetables",
+      "500 g eggs, chicken, tofu or beans",
+      "2 avocados",
+      "4 tbsp ground seeds",
+      "200 g yoghurt herb sauce"
+    ],
+    "instructions": [
+      "Put grain, protein, veg and sauce on the table.",
+      "Let everyone assemble their own plate.",
+      "Keep extra components for lunch bowls."
+    ],
+    "baby": "Serve deconstructed with soft veg, mashed avocado, squashed beans or shredded protein. Avoid whole seeds.",
+    "nutrition": "This is balanced by design: carb, protein, colour, fat and sauce. The variety helps cover more micronutrients across the week.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://cookieandkate.com/buddha-bowl-recipe/"
+    },
+    "detailedInstructions": [
+      "Start with a cooked grain, then add one protein, two colourful vegetables, one creamy element and one sauce.",
+      "Keep the components separate on the table so adults can build bowls and the baby can have a safe deconstructed plate.",
+      "Make extra grain, protein and sauce so tomorrow lunch is mostly assembly."
+    ]
+  },
+  {
+    "title": "Warm Salmon, Pea & Potato Salad",
+    "slug": "warm-salmon-pea-and-potato-salad",
+    "type": "Flexible",
+    "time": "25 min",
+    "prepTime": "PT25M",
+    "tags": [
+      "Fresh"
+    ],
+    "yield": "4 servings",
+    "description": "Works warm for dinner and cold for lunch, which is useful when reheating is awkward.",
+    "ingredients": [
+      "4 salmon fillets",
+      "800 g baby potatoes",
+      "250 g frozen peas",
+      "1 cucumber or 2 handfuls greens",
+      "200 g Greek yoghurt",
+      "1 handful dill and 1 lemon"
+    ],
+    "instructions": [
+      "Boil potatoes, adding peas near the end.",
+      "Pan-cook or bake salmon.",
+      "Toss with yoghurt, dill, lemon and greens."
+    ],
+    "baby": "Check salmon for bones, flake well, and squash peas. Serve cucumber only if soft or finely chopped.",
+    "nutrition": "Salmon covers omega-3 fats and protein, peas add fibre, and potatoes make the meal gentle but filling.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.foodnetwork.com/recipes/warm-salmon-and-potato-salad-with-creamy-dill-dressing-4614477"
+    }
+  },
+  {
+    "title": "Hummus Snack-Board Dinner",
+    "slug": "hummus-snack-board-dinner",
+    "type": "Fallback",
+    "time": "7 min",
+    "prepTime": "PT7M",
+    "tags": [
+      "No-cook"
+    ],
+    "yield": "4 servings",
+    "description": "For evenings when cooking would tip the whole day over. Still balanced enough to count.",
+    "ingredients": [
+      "300 g hummus",
+      "4 boiled eggs or 400 g cooked chicken",
+      "2 avocados",
+      "250 g cherry tomatoes",
+      "1 pack GF crackers or toast",
+      "400 g fruit"
+    ],
+    "instructions": [
+      "Put hummus, protein, carbs, fruit and veg on a board or plates.",
+      "Add olive oil, lemon or herbs if you have them."
+    ],
+    "baby": "Spread hummus thinly, quarter tomatoes lengthwise, and cut egg or chicken into safe soft pieces.",
+    "nutrition": "Hummus, eggs or chicken, avocado and fruit make a no-cook plate with protein, fats, fibre and enough freshness to feel alive.",
+    "similarRecipe": {
+      "label": "Similar recipe",
+      "url": "https://www.foodandwine.com/appetizers/dips/hummus/hummus-recipes"
+    },
+    "detailedInstructions": [
+      "Put hummus, eggs or cooked chicken, avocado, fruit, tomatoes and crackers or toast on plates or a board.",
+      "Add olive oil, lemon, herbs or seeds for the adults if they are within reach.",
+      "For the baby, spread hummus thinly and cut round or firm foods into safe shapes."
+    ]
+  }
+]
